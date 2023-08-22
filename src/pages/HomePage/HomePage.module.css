@@ -1,0 +1,77 @@
+/* HomePage.module.css */
+
+.homePage {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .videoBackground {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .backgroundVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  .heroSection {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; 
+    padding: 50px;
+    color: rgb(27, 23, 23);
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  .heroSection h2 {
+    font-size: 4vw; 
+  }
+  
+  .heroSection p {
+    font-size: 3vw;
+    margin: 10px;
+  }
+  
+  .btn_catalog {
+    width: 250px;
+    height: 200px;
+    padding: 0 20px;
+    background-color: transparent;
+    border: 4px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+  }
+  
+  @media (max-width: 768px) {
+    .heroSection {
+      padding: 30px;
+      color: white;
+    }
+    
+    .heroSection h2 {
+      font-size: 6vw;
+    }
+  
+    .heroSection p {
+      font-size: 4vw;
+    }
+  }
+  

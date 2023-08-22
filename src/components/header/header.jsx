@@ -1,27 +1,35 @@
-import React from 'react';
-import { FaHeart, FaShoppingCart, FaUser } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { FaHeart, FaShoppingCart, FaUser, FaBars, FaTimes } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 import logo from './image/icon/logo.png';
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className={styles.header}>
       <div className={`${styles.logo} ${styles.img}`}>
-        <img src={logo} alt="Логотип магазина" />
+        <Link to="/" ><img src={logo} alt="Логотип магазина" /></Link>
       </div>
-      <div className={styles.search}>
-        <input type="text" placeholder="Поиск" />
-        <button>Найти</button>
+
+      {/* Добавляем класс burger только на мобильных устройствах */}
+      <div className={`${styles.burger} ${styles.mobileOnly}`} onClick={toggleMenu}>
+        {isMenuOpen ? <FaTimes /> : <FaBars />}
       </div>
-      <nav className={styles.navigation}>
+
+      {/* Добавляем класс navigation только на мобильных устройствах */}
+      <nav className={`${styles.navigation} ${styles.mobileOnly} ${isMenuOpen ? styles.open : ''}`}>
         <ul className={styles['nav-list']}>
-          <li><a href="/">Главная</a></li>
-          <li><a href="/catalog">Каталог</a></li>
-          <li><a href="/about">О нас</a></li>
-          <li><a href="/contact">Контакты</a></li>
-          <li><a href="/favorites"><FaHeart /> </a></li>
-          <li><a href="/cart"><FaShoppingCart /> </a></li>
-          <li><a href="/profile"><FaUser /> </a></li>
+          <li><Link to="tel:+1234567890"> +1234567890</Link></li>
+          <li><Link to="/catalog">Каталог</Link></li>
+          <li><Link to="/favorites"><FaHeart /></Link></li>
+          <li><Link to="/cart"><FaShoppingCart /></Link></li>
+          <li><Link to="/profile"><FaUser /></Link></li>
         </ul>
       </nav>
     </header>
