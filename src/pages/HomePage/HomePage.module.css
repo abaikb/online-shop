@@ -1,0 +1,79 @@
+/* HomePage.module.css */
+
+.homePage {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://katysoho.com.ua/wp-content/uploads/2023/04/hero-2.png');
+    background-repeat: no-repeat;
+  }
+  .heroSection {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; 
+    padding: 50px;
+    color: rgb(27, 23, 23);
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  .heroSection h2 {
+    font-size: 4vw; 
+  }
+  
+  .heroSection p {
+    font-size: 3vw;
+    margin: 10px;
+  }
+  
+  
+
+  .btn_catalog {
+    width: 250px;
+    height: 200px;
+    padding: 0 20px;
+    background-color: transparent;
+    border: 4px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    padding-bottom: 10px;
+    transition: transform 0.2s; 
+  }
+  
+  .btn_catalog:active {
+    transform: scale(0.9); 
+  }
+
+  .btn_catalog:hover {
+    color:white; 
+    background: black;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .heroSection {
+      padding: 30px;
+      color: rgb(28, 6, 6);
+    }
+
+    .btn_catalog {
+      padding-bottom: 0;
+    }
+    
+    .heroSection h2 {
+      font-size: 6vw;
+    }
+  
+    .heroSection p {
+      font-size: 4vw;
+    }
+  }
+  
