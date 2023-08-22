@@ -66,8 +66,17 @@
 }
 
 @media (max-width: 768px) {
+
+  .header {
+    justify-content: space-between;
+  }
   .burger {
     display: block; 
+    margin-right: 20px;
+  }
+  .logo img {
+    margin-left: 20px;
+    max-width: 35px;
   }
 
   .navigation {

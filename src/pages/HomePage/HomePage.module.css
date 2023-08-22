@@ -6,25 +6,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url('https://katysoho.com.ua/wp-content/uploads/2023/04/hero-2.png');
+    background-repeat: no-repeat;
   }
-  
-  .videoBackground {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 100vh;
-  }
-  
-  .backgroundVideo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-  }
-  
   .heroSection {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     position: relative;
@@ -49,6 +33,8 @@
     margin: 10px;
   }
   
+  
+
   .btn_catalog {
     width: 250px;
     height: 200px;
@@ -57,13 +43,29 @@
     border: 4px solid black;
     border-radius: 5px;
     text-decoration: none;
-    color: white;
+    color: black;
+    padding-bottom: 10px;
+    transition: transform 0.2s; 
   }
+  
+  .btn_catalog:active {
+    transform: scale(0.9); 
+  }
+
+  .btn_catalog:hover {
+    color:white; 
+    background: black;
+  }
+  
   
   @media (max-width: 768px) {
     .heroSection {
       padding: 30px;
-      color: white;
+      color: rgb(28, 6, 6);
+    }
+
+    .btn_catalog {
+      padding-bottom: 0;
     }
     
     .heroSection h2 {
