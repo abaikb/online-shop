@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './BagCard.module.css';
 import { FaShoppingCart, FaHeart, FaMapMarkerAlt } from 'react-icons/fa';
 
-const BagCard = ({ bag }) => {
+const BagCard = ({ bag, addToCart }) => {
   return (
     <div className={styles.bagCard}>
       <img className={styles.bagImage} src={bag.image} alt={bag.name} />
@@ -12,7 +12,7 @@ const BagCard = ({ bag }) => {
           <div className={styles.icons}>
             <FaHeart className={styles.icon} />
             <p className={styles.bagPrice}>Цена: {bag.price} сом</p>
-            <FaShoppingCart className={styles.icon} />
+            <FaShoppingCart className={styles.icon} onClick={() => addToCart(bag)} />
           </div>
         </div>
         <p className={styles.bagDesc}>{bag.desc}</p>

@@ -34,7 +34,6 @@ const Header = () => {
           <li onClick={closeMenu}><Link to="/profile"><FaUser /></Link></li>
         </ul>
       </nav>
-
     </header>
   );
 };
