@@ -1,27 +1,37 @@
-import React from 'react';
-import { FaHeart, FaShoppingCart, FaUser } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { FaHeart, FaShoppingCart, FaUser, FaBars, FaTimes } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 import logo from './image/icon/logo.png';
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className={styles.header}>
       <div className={`${styles.logo} ${styles.img}`}>
-        <img src={logo} alt="Логотип магазина" />
+        <Link to="/" ><img src={logo} alt="Логотип магазина" /></Link>
       </div>
-      <div className={styles.search}>
-        <input type="text" placeholder="Поиск" />
-        <button>Найти</button>
+
+      <div className={`${styles.burger} ${styles.mobileOnly}`} onClick={toggleMenu}>
+        {isMenuOpen ? <FaTimes /> : <FaBars />}
       </div>
-      <nav className={styles.navigation}>
+
+      <nav className={`${styles.navigation} ${styles.mobileOnly} ${isMenuOpen ? styles.open : ''}`}>
         <ul className={styles['nav-list']}>
-          <li><a href="/">Главная</a></li>
-          <li><a href="/catalog">Каталог</a></li>
-          <li><a href="/about">О нас</a></li>
-          <li><a href="/contact">Контакты</a></li>
-          <li><a href="/favorites"><FaHeart /> </a></li>
-          <li><a href="/cart"><FaShoppingCart /> </a></li>
-          <li><a href="/profile"><FaUser /> </a></li>
+          <li onClick={closeMenu}><Link to="tel:+1234567890"> +1234567890</Link></li>
+          <li onClick={closeMenu}><Link to="/catalog">Каталог</Link></li>
+          <li onClick={closeMenu}><Link to="/favorites"><FaHeart /></Link></li>
+          <li onClick={closeMenu}><Link to="/cart"><FaShoppingCart /></Link></li>
+          <li onClick={closeMenu}><Link to="/profile"><FaUser /></Link></li>
         </ul>
       </nav>
     </header>

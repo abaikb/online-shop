@@ -1,0 +1,74 @@
+.bagCard {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    width: 290px;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 16px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .bagImage {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin-right: 16px;
+    border-radius: 10px;
+  }
+  
+  .bagInfo {
+    flex: 1;
+  }
+  
+  .bagName {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .icon {
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+  
+  .bagDesc {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .bagPlace,
+  .bagDate {
+    font-size: 0.9rem;
+    color: #777;
+    margin: 4px 0;
+  }
+  
+  .bagInfo {
+    font-size: 0.9rem;
+  }
+
+  .bagPrice {
+    color: rgb(29, 95, 72);
+    font-size: 18px;
+  }
+
+  .bagPlace {
+    display: flex;
+    justify-content: center;
+    color: #302c2c;
+  }
+
+
+  @media (max-width: 768px) { 
+    .bagCard {
+        width: 350px;
+    }
+  }
+  
