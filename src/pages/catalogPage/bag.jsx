@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'; // Импорт Link
 import BagCard from '../../components/BagCard/BagCard';
-import styles from './CatalogPage.module.css'; // Import module CSS
+import styles from './CatalogPage.module.css';
 
 function CatalogPage() {
   const [bags, setBags] = useState([]);
@@ -18,15 +19,12 @@ function CatalogPage() {
 
     fetchData();
   }, []);
-
-  
-
   return (
     <div className={styles.CatalogPage}>
       <h1>Женские сумки</h1>
       <div className={styles['bag-list']}>
         {bags.map((bag) => (
-          <BagCard key={bag.id} bag={bag}  />
+          <BagCard key={bag.id} bag={bag} />
         ))}
       </div>
     </div>
