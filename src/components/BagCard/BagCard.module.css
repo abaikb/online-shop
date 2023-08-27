@@ -21,7 +21,11 @@
   .bagInfo {
     flex: 1;
   }
-  
+  .bagLink{
+    text-decoration: none;
+    color: inherit
+    
+  }
   .bagName {
     font-size: 1.5rem;
     margin: 0;
