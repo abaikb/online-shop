@@ -18,8 +18,7 @@ function App() {
             <Route index element={<HomePage />} />
             <Route path="/catalog" element={<CatalogPage />} />
             <Route path="/cart" element={<CartPage />} />
-            <Route path="/catalog/:id" element={<BagDetailPage />} /> 
-            <Route path="/profile" element={<LoginPage/>} />
+            <Route path="/catalog/:id" element={<BagDetailPage />} /> Добавьте маршрут для детальной страницы
             {/* Добавьте другие маршруты здесь */}
           </Route>
         </Routes>
