@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaHeart, FaShoppingCart, FaUser, FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
-import logo from './image/icon/logo.png';
+import logo from '../image/icon/logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

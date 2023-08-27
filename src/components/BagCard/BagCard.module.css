@@ -32,19 +32,69 @@
   }
 
   .icons {
+    padding: 10px;
     margin-top: 10px;
     display: flex;
     justify-content: space-around;
   }
   
   .icon {
-    font-size: 1.25rem;
+    color: rgb(41, 77, 108);
+    font-size: 2.25rem;
     cursor: pointer;
+    text-decoration: none; 
+    transition: font-size 0.2s; 
   }
+
+  .icon:hover {
+    color: #ff9900;
+  }
+
+  .icon:active {
+    font-size: 3rem;
+    color: #2b5f57;
+  }
+
+  .cartIconContainer {
+    position: relative;
+  }
+  
+  .addedMessage {
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(50, 103, 128);
+    color:  rgb(239, 246, 241);
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    display: inline-block;
+    opacity: 1;
+    transition: opacity 0.5s;
+    width: 150px;
+  }
+  
+  .addedMessage::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #ff9900 transparent transparent transparent;
+  }
+  
+  .addedMessage.hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+
   
   .bagDesc {
     font-size: 1rem;
-    color: #555;
+    color: #333030;
   }
   
   .bagPlace,
@@ -68,6 +118,8 @@
     justify-content: center;
     color: #302c2c;
   }
+
+
 
 
   @media (max-width: 768px) { 
