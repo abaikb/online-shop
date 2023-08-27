@@ -6,7 +6,7 @@ import Footer from '../footer/footer';
 const Layout = () => {
   return (
     <>
-      <Header />
+      <Header/>
       <Outlet />
       <Footer />
     </>
