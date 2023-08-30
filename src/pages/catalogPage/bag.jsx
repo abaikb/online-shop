@@ -1,8 +1,8 @@
-// CatalogPage.js
 import React, { useEffect, useContext, useState } from 'react';
 import BagCard from '../../components/BagCard/BagCard';
 import styles from './CatalogPage.module.css';
 import { CartContext } from '../../CartContext';
+import BagDetailPage from '../DetailPage/detail'; // Make sure to provide the correct path
 
 function CatalogPage() {
   const [bags, setBags] = useState([]);
@@ -40,7 +40,7 @@ function CatalogPage() {
       <h1>Женские сумки</h1>
       <div className={styles['bag-list']}>
         {bags.map((bag) => (
-          <BagCard key={bag.id} bag={bag} addToCart={addToCart} />
+          <BagDetailPage key={bag.id} bag={bag} addToCart={addToCart} /> // Передаем addToCart как пропс
         ))}
       </div>
     </div>

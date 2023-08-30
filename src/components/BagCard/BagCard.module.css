@@ -1,130 +1,130 @@
 .bagCard {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    display: flex;
-    width: 290px;
-    flex-direction: column;
-    border: 1px solid #ccc;
-    padding: 16px;
-    margin: 16px;
-    border-radius: 8px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
-  }
-  
-  .bagImage {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    margin-right: 16px;
-    border-radius: 10px;
-  }
-  
-  .bagInfo {
-    flex: 1;
-  }
-  .bagLink{
-    text-decoration: none;
-    color: inherit
-    
-  }
-  .bagName {
-    font-size: 1.5rem;
-    margin: 0;
-  }
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  display: flex;
+  width: 290px;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin: 16px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-  .icons {
-    padding: 10px;
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .icon {
-    color: rgb(41, 77, 108);
-    font-size: 2.25rem;
-    cursor: pointer;
-    text-decoration: none; 
-    transition: font-size 0.2s; 
-  }
+.bagImage {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  margin-right: 16px;
+  border-radius: 10px;
+}
 
-  .icon:hover {
-    color: #ff9900;
-  }
+.bagInfo {
+  flex: 1;
+}
 
-  .icon:active {
-    font-size: 3rem;
-    color: #2b5f57;
-  }
+.bagLink {
+  text-decoration: none;
+  color: inherit
+}
 
-  .cartIconContainer {
-    position: relative;
-  }
-  
-  .addedMessage {
-    position: absolute;
-    top: -70px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgb(50, 103, 128);
-    color:  rgb(239, 246, 241);
-    padding: 6px 10px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    display: inline-block;
-    opacity: 1;
-    transition: opacity 0.5s;
-    width: 150px;
-  }
-  
-  .addedMessage::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 6px;
-    border-style: solid;
-    border-color: #ff9900 transparent transparent transparent;
-  }
-  
-  .addedMessage.hide {
-    opacity: 0;
-    pointer-events: none;
-  }
+.bagName {
+  font-size: 1.5rem;
+  margin: 0;
+}
 
-  
-  .bagDesc {
-    font-size: 1rem;
-    color: #333030;
-  }
-  
-  .bagPlace,
-  .bagDate {
-    font-size: 0.9rem;
-    color: #777;
-    margin: 4px 0;
-  }
-  
-  .bagInfo {
-    font-size: 0.9rem;
-  }
+.icons {
+  padding: 10px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
 
-  .bagPrice {
-    color: rgb(29, 95, 72);
-    font-size: 18px;
-  }
+.icon {
+  color: rgb(41, 77, 108);
+  font-size: 2.25rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: font-size 0.2s;
+}
 
-  .bagPlace {
-    display: flex;
-    justify-content: center;
-    color: #302c2c;
-  }
+.icon:hover {
+  color: #ff9900;
+}
+
+.icon:active {
+  font-size: 3rem;
+  color: #2b5f57;
+}
+
+.cartIconContainer {
+  position: relative;
+}
+
+.addedMessage {
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(50, 103, 128);
+  color: rgb(239, 246, 241);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  display: inline-block;
+  opacity: 1;
+  transition: opacity 0.5s;
+  width: 150px;
+}
+
+.addedMessage::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #ff9900 transparent transparent transparent;
+}
+
+.addedMessage.hide {
+  opacity: 0;
+  pointer-events: none;
+}
 
 
+.bagDesc {
+  font-size: 1rem;
+  color: #333030;
+}
+
+.bagPlace,
+.bagDate {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 4px 0;
+}
+
+.bagInfo {
+  font-size: 0.9rem;
+}
+
+.bagPrice {
+  color: rgb(29, 95, 72);
+  font-size: 18px;
+}
+
+.bagPlace {
+  display: flex;
+  justify-content: center;
+  color: #302c2c;
+}
 
 
-  @media (max-width: 768px) { 
-    .bagCard {
-        width: 350px;
-    }
+
+
+@media (max-width: 768px) {
+  .bagCard {
+    width: 350px;
   }
-  
+}
