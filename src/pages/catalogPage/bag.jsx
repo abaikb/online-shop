@@ -1,4 +1,3 @@
-// CatalogPage.js
 import React, { useEffect, useContext, useState } from 'react';
 import BagCard from '../../components/BagCard/BagCard';
 import styles from './CatalogPage.module.css';
