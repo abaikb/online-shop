@@ -1,11 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import styles from './BagDetailPage.module.css';
 import { FaShoppingCart, FaHeart, FaMapMarkerAlt } from 'react-icons/fa';
+import { CartContext } from '../../CartContext';
 
-function BagDetailPage({ addToCart }) {
+
+function BagDetailPage() {
     const { id } = useParams();
     const [bag, setBag] = useState(null);
+    const { cartItems, setCartItems } = useContext(CartContext);
+
 
     useEffect(() => {
         async function fetchBag() {
@@ -24,6 +28,20 @@ function BagDetailPage({ addToCart }) {
     if (!bag) {
         return <div>Loading...</div>;
     }
+
+    const addToCart = (item) => {
+        const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
+    
+        if (existingItem) {
+          setCartItems((prevCartItems) =>
+            prevCartItems.map((cartItem) =>
+              cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
+            )
+          );
+        } else {
+          setCartItems((prevCartItems) => [...prevCartItems, { ...item, quantity: 1 }]);
+        }
+      };
 
     return (
         <div className={styles.bagDetailPage}>
