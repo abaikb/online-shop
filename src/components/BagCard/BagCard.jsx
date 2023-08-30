@@ -53,3 +53,5 @@ const BagCard = ({ bag, addToCart, addToFavorites, removeFromFavorites, isFavori
 };
 
 export default BagCard;
+
+
