@@ -3,7 +3,7 @@ import styles from './BagCard.module.css';
 import { FaShoppingCart, FaHeart, FaMapMarkerAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-const BagCard = ({ bag, addToCart }) => {
+const BagCard = ({ bag, addToCart, addToFavorites, removeFromFavorites, isFavorite }) => {
   const [showAddedMessage, setShowAddedMessage] = useState(false);
 
   const handleAddToCart = () => {
@@ -24,7 +24,12 @@ const BagCard = ({ bag, addToCart }) => {
         <div className={styles.header}>
           <h2 className={styles.bagName}>{bag.name}</h2>
           <div className={styles.icons}>
-            <FaHeart className={styles.icon} />
+          <FaHeart
+              className={`${styles.icon} ${isFavorite ? styles.favorite : ''}`}
+              onClick={() =>
+                isFavorite ? removeFromFavorites(bag.id) : addToFavorites(bag)
+              }
+            />
             <div className={styles.cartIconContainer}>
               <FaShoppingCart
                 className={`${styles.icon} ${styles.cartIcon}`}
@@ -48,3 +53,5 @@ const BagCard = ({ bag, addToCart }) => {
 };
 
 export default BagCard;
+
+
