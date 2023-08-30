@@ -8,9 +8,8 @@ import HomePage from './pages/HomePage/HomePage';
 import CatalogPage from './pages/catalogPage/bag';
 import BagDetailPage from './pages/DetailPage/detail.jsx'; // Импортируйте компонент BagDetailPage
 import CartPage from './pages/CartPage';
-import Favorite from './pages/FavoritePage/fav.jsx';
-import LoginPage from './pages/LoginPage/LoginPage';
-;
+import Favorite from './pages/FavoritePage/fav.jsx'; 
+import './App.css';
 
 function App() {
   return (

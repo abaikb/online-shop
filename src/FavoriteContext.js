@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext } from "react";
 
-const FavoriteContext = createContext();
+export const FavoriteContext = createContext();
 
 export const useFavorite = () => {
   return useContext(FavoriteContext);
