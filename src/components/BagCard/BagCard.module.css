@@ -49,6 +49,7 @@
   /* Стили для иконки избранного, когда товар добавлен в избранное */
   color: red;
 }
+
 .icon {
   color: rgb(41, 77, 108);
   font-size: 2.25rem;
@@ -72,7 +73,7 @@
 
 .addedMessage {
   position: absolute;
-  top: -70px;
+  top: -50px;
   left: 50%;
   transform: translateX(-50%);
   background-color: rgb(50, 103, 128);

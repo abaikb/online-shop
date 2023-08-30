@@ -8,24 +8,27 @@ import HomePage from './pages/HomePage/HomePage';
 import CatalogPage from './pages/catalogPage/bag';
 import BagDetailPage from './pages/DetailPage/detail.jsx'; // Импортируйте компонент BagDetailPage
 import CartPage from './pages/CartPage';
-import Favorite from './pages/FavoritePage/fav.jsx'; 
+import Favorite from './pages/FavoritePage/fav.jsx';
+import LoginPage from './pages/LoginPage/LoginPage';
 ;
 
 function App() {
   return (
     <Router>
       <CartProvider>
-      <FavoriteProvider>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<HomePage />} />
-            <Route path="/catalog" element={<CatalogPage />} />
-            <Route path="/cart" element={<CartPage />} />
-            <Route path="/favorites" element={<Favorite />} /> 
-            <Route path="/catalog/:id" element={<BagDetailPage />} /> Добавьте маршрут для детальной страницы
-            {/* Добавьте другие маршруты здесь */}
-          </Route>
-        </Routes>
+        <FavoriteProvider>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<HomePage />} />
+              <Route path="/catalog" element={<CatalogPage />} />
+              <Route path="/cart" element={<CartPage />} />
+              <Route path="/favorites" element={<Favorite />} />
+              <Route path="/profile" element={<LoginPage />} />
+              <Route path="/catalog/:id" element={<BagDetailPage />} />
+
+              {/* Добавьте другие маршруты здесь */}
+            </Route>
+          </Routes>
         </FavoriteProvider>
       </CartProvider>
     </Router>
