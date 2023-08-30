@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './CartContext'; // Импортируйте CartProvider
 import { FavoriteProvider } from './FavoriteContext';
 
+
 import Layout from './components/Layout/Layout';
 import HomePage from './pages/HomePage/HomePage';
 import CatalogPage from './pages/catalogPage/bag';
@@ -10,6 +11,7 @@ import BagDetailPage from './pages/DetailPage/detail.jsx'; // Импортиру
 import CartPage from './pages/CartPage';
 import Favorite from './pages/FavoritePage/fav.jsx'; 
 import './App.css';
+import LoginForm from './pages/auth/login';
 
 function App() {
   return (
@@ -22,8 +24,8 @@ function App() {
               <Route path="/catalog" element={<CatalogPage />} />
               <Route path="/cart" element={<CartPage />} />
               <Route path="/favorites" element={<Favorite />} />
-              <Route path="/profile" element={<LoginPage />} />
               <Route path="/catalog/:id" element={<BagDetailPage />} />
+              <Route path="/profile" element={<LoginForm />} />
             </Route>
           </Routes>
         </FavoriteProvider>
