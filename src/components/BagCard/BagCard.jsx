@@ -24,8 +24,9 @@ const BagCard = ({ bag, addToCart, addToFavorites, removeFromFavorites, isFavori
         <div className={styles.header}>
           <h2 className={styles.bagName}>{bag.name}</h2>
           <div className={styles.icons}>
-          <FaHeart
-              className={`${styles.icon} ${isFavorite ? styles.favorite : ''}`}
+          <p className={styles.bagPrice}>{bag.price} сом</p>
+            <FaHeart
+              className={`${styles.fav_icon} ${isFavorite ? styles.favorite : ''}`}
               onClick={() =>
                 isFavorite ? removeFromFavorites(bag.id) : addToFavorites(bag)
               }
@@ -39,13 +40,12 @@ const BagCard = ({ bag, addToCart, addToFavorites, removeFromFavorites, isFavori
                 <p className={styles.addedMessage}>Товар добавлен в корзину</p>
               )}
             </div>
-            <p className={styles.bagPrice}>Цена: {bag.price} сом</p>
           </div>
         </div>
-        <p className={styles.bagDesc}>{bag.desc}</p>
+        {/* <p className={styles.bagDesc}>{bag.desc}</p> */}
         <div className={styles.bagPlace}>
-          <FaMapMarkerAlt className={styles.locationIcon} />
-          <p>{bag.place}</p>
+          {/* <FaMapMarkerAlt className={styles.locationIcon} /> */}
+          {/* <p>{bag.place}</p> */}
         </div>
       </div>
     </div>

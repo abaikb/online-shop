@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaHeart, FaShoppingCart, FaUser, FaBars, FaTimes } from 'react-icons/fa';
+import { FaHeart, FaShoppingCart, FaUser, FaBars, FaTimes, FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 import logo from '../image/icon/logo.png';
@@ -29,6 +29,7 @@ const Header = () => {
         <ul className={styles['nav-list']}>
           <li onClick={closeMenu}><Link to="tel:+1234567890"> +1234567890</Link></li>
           <li onClick={closeMenu}><Link to="/catalog">Каталог</Link></li>
+          <li onClick={closeMenu}><Link to="/"><FaSearch /></Link></li>
           <li onClick={closeMenu}><Link to="/favorites"><FaHeart /></Link></li>
           <li onClick={closeMenu}><Link to="/cart"><FaShoppingCart /></Link></li>
           <li onClick={closeMenu}><Link to="/profile"><FaUser /></Link></li>
