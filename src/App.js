@@ -24,8 +24,6 @@ function App() {
               <Route path="/favorites" element={<Favorite />} />
               <Route path="/profile" element={<LoginPage />} />
               <Route path="/catalog/:id" element={<BagDetailPage />} />
-
-              {/* Добавьте другие маршруты здесь */}
             </Route>
           </Routes>
         </FavoriteProvider>
