@@ -11,6 +11,7 @@ import BagDetailPage from './pages/DetailPage/detail.jsx'; // Импортиру
 import CartPage from './pages/CartPage';
 import Favorite from './pages/FavoritePage/fav.jsx';
 import LoginPage from './pages/LoginPage/LoginPage';
+import ProfilePage from './pages/ProfilePage/ProfilePage';
 import './App.css';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
               <Route path="/profile" element={<LoginPage />} />
               <Route path="/catalog/:id" element={<BagDetailPage />} />
               <Route path="/catalog/:id" element={<BagDetailPage />} />
+              <Route path="/client" element={<ProfilePage />} />
             </Route>
           </Routes>
         </FavoriteProvider>

@@ -34,7 +34,6 @@ function LoginForm() {
       const token = response.data;
       localStorage.setItem('token', JSON.stringify(token));
       console.log('Успешный ответ от сервера:', response.data);
-
       navigate('/catalog');
     } catch (error) {
       console.error('Ошибка при отправке запроса:', error);
