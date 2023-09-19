@@ -1,0 +1,24 @@
+.loginPage {
+  max-width: 800px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.formToggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.formToggle button {
+  padding: 10px 15px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.formToggle button.active {
+  background-color: #007bff;
+  color: white;
+}

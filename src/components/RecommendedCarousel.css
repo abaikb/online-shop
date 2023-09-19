@@ -1,0 +1,18 @@
+Пример стилей CSS для компонента RecommendedCarousel */
+
+.recommended-carousel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: -15px; /* Для создания отступов между элементами */
+  }
+  
+  .recommended-carousel-row {
+    flex: 0 1 calc(25% - 30px); /* 25% ширины, минус отступы */
+    margin: 15px; /* Отступы между рядами */
+  }
+  
+  .recommended-carousel-item {
+    margin: 15px; /* Отступы между элементами */
+  }
+  

@@ -1,0 +1,123 @@
+.bagDetailPage {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 100px;
+    width: 100%;
+}
+
+.bagImage {
+    width: 100%;
+    max-width: 50%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bagInfo {
+    flex: 1;
+    padding: 50px 80px 30px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bagName {
+    text-align: center;
+    font-size: 2.7rem;
+}
+
+.icons {
+    margin: 30px 0 30px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.icon {
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.icon:hover {
+    color: green;
+}
+
+.bagDesc {
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 16px;
+}
+
+.bagPlace,
+.bagDate {
+    font-size: 0.9rem;
+    color: #777;
+    margin: 10px 0;
+}
+
+.bagPrice {
+    color: rgb(29, 95, 72);
+    font-size: 18px;
+}
+
+.bagPlace {
+    display: flex;
+    justify-content: center;
+    color: #302c2c;
+}
+.recContainer {
+    text-align: center;
+    font-size: 30px;
+}
+.recommendedBags {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 100px;
+}
+
+.carousel {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.recommendedBags > a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: row;
+}
+.recommendedBagImage {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .bagDetailPage {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .bagImage {
+        max-width: 100%;
+    }
+
+    .bagInfo {
+        padding: 15px;
+    }
+    .bagDesc {
+        font-size: 1rem;
+    }
+
+    .recommendedBags {
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+    
+}

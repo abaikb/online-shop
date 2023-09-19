@@ -1,0 +1,59 @@
+import React, { useState } from 'react';
+import styles from './BagCard.module.css';
+import { FaShoppingCart, FaHeart, FaMapMarkerAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
+const BagCard = ({ bag, addToCart, addToFavorites, removeFromFavorites, isFavorite }) => {
+  const [showAddedMessage, setShowAddedMessage] = useState(false);
+
+  const handleAddToCart = () => {
+    addToCart(bag);
+    setShowAddedMessage(true);
+
+    setTimeout(() => {
+      setShowAddedMessage(false);
+    }, 2000);
+  };
+
+  return (
+    <div className={styles.bagCard}>
+      <Link to={`/catalog/${bag.id}`} className={styles.bagLink}>
+        <img className={styles.bagImage} src={bag.image} alt={bag.name} />
+      </Link>
+      <div className={styles.bagInfo}>
+        <div className={styles.header}>
+          <h2 className={styles.bagName}>{bag.name}</h2>
+          <div className={styles.icons}>
+            <p className={styles.bagPrice}>{bag.price} сом</p>
+            <div>
+              <FaHeart
+                className={`${styles.fav_icon} ${isFavorite ? styles.favorite : ''}`}
+                onClick={() =>
+                  isFavorite ? removeFromFavorites(bag.id) : addToFavorites(bag)
+                }
+              />
+              <div className={styles.cartIconContainer}>
+                <FaShoppingCart
+                  className={`${styles.icon} ${styles.cartIcon}`}
+                  onClick={handleAddToCart}
+                />
+                {showAddedMessage && (
+                  <p className={styles.addedMessage}>Товар добавлен в корзину</p>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* <p className={styles.bagDesc}>{bag.desc}</p> */}
+        <div className={styles.bagPlace}>
+          {/* <FaMapMarkerAlt className={styles.locationIcon} /> */}
+          {/* <p>{bag.place}</p> */}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default BagCard;
+
+

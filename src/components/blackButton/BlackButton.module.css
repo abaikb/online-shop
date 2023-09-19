@@ -1,0 +1,12 @@
+.button {
+  background-color: black;
+  padding: 2%;
+  text-transform: uppercase;
+  color: white;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background-color: rgb(40, 40, 40);
+  transition: 0.3s;
+}
