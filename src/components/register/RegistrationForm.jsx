@@ -17,7 +17,6 @@ function RegistrationForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const url = 'http://34.107.117.216/account/register/';
     const headers = {
       'accept': 'application/json',
       'X-CSRFToken': 'Rl6v9oBwdXPRDrmB5iEExQENJl85CuGfMjvkpDMRLQCrRJKd6AmGzoimhNpVOL0u'
