@@ -4,14 +4,14 @@ import axios from 'axios';
 
 export default function ProfilePage() {
   const headers = {
-    "Authorization": `Basic ${JSON.parse(localStorage.getItem('token')).access}`,
+    "Authorization": `${JSON.parse(localStorage.getItem('token')).access}`,
     "X-CSRFToken": 'Rl6v9oBwdXPRDrmB5iEExQENJl85CuGfMjvkpDMRLQCrRJKd6AmGzoimhNpVOL0u',
     "Content-Type": "application/json"
   };
 
   const getProfileData = async (values) => {
     try {
-      const response = await axios.get(`${API_BASE_URL}/account/profile`, { headers });
+      const response = await axios.put(`${API_BASE_URL}/account/profile`);
       console.log(response.data);
     } catch (error) {
       console.error(error);

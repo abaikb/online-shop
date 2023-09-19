@@ -1,13 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { CartProvider } from './CartContext'; // Импортируйте CartProvider
+import { CartProvider } from './CartContext';
 import { FavoriteProvider } from './FavoriteContext';
-import { Button, ConfigProvider, Space } from 'antd';
 
 import Layout from './components/Layout/Layout';
 import HomePage from './pages/HomePage/HomePage';
 import CatalogPage from './pages/catalogPage/bag';
-import BagDetailPage from './pages/DetailPage/detail.jsx'; // Импортируйте компонент BagDetailPage
+import BagDetailPage from './pages/DetailPage/detail.jsx';
 import CartPage from './pages/CartPage';
 import Favorite from './pages/FavoritePage/fav.jsx';
 import LoginPage from './pages/LoginPage/LoginPage';
@@ -33,15 +32,6 @@ function App() {
           </Routes>
         </FavoriteProvider>
       </CartProvider>
-      <ConfigProvider
-        theme={{
-          token: {
-            colorPrimary: '#000000',
-            borderRadius: 0,
-            colorBgContainer: '#ffffff',
-          },
-        }}
-      />
     </Router>
   );
 }

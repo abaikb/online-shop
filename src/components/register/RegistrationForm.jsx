@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import styles from './RegistrationForm.module.css';
-import BlackButton from '../blackButton/BlackButton';
+import BlackButton from '../antdConfig/AntdConfig';
 import { Input } from 'antd';
 import API_BASE_URL from '../../api/BASE_URL'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

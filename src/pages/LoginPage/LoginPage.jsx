@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import LoginForm from '../../components/login/LoginForm';
 import RegistrationForm from '../../components/register/RegistrationForm';
 import styles from './LoginPage.module.css'; 
-import BlackButton from '../../components/blackButton/BlackButton';
+import BlackButton from '../../components/antdConfig/AntdConfig';
 
 const LoginPage = () => {
   const [isLoginFormVisible, setIsLoginFormVisible] = useState(true);

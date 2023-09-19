@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-// import { FontAwesomeIcon } from '@fontawesome/react-fontawesome';
-// import { faEye, faEyeSlash } from '@fontawesome/free-solid-svg-icons'; // Импортируйте useNavigate
 import styles from './LoginForm.module.css';
-import BlackButton from '../blackButton/BlackButton';
-import { Input } from 'antd'
+// import Button from '../Button/Button';
+import { Input, ConfigProvider, Button } from 'antd';
+import AntdConfig from '../antdConfig/AntdConfig';
 
 function LoginForm() {
   const navigate = useNavigate(); // Получите объект navigate
@@ -47,42 +46,49 @@ function LoginForm() {
 
   return (
     <div className={styles.login}>
-      <div className={styles.container}>
-        <h1 className={styles.title}>Вход</h1>
-        <form onSubmit={handleSubmit}>
-          <div className={styles.inputContainer}>
-            <label className={styles.label}>Email:</label>
-            <Input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className={styles.inputField}
-              required
-            />
-          </div>
-          <div className={styles.inputContainer}>
-            <label className={styles.label}>Пароль:</label>
-            <div className={styles.passwordInput}>
+      <AntdConfig
+        theme={{
+          token: {
+            colorPrimary: '#000000',
+            colorPrimaryHover: '#2d2d2d',
+            borderRadius: 0,
+            colorBgContainer: '#ffffff',
+          },
+        }}
+      >
+        <div className={styles.container}>
+          <h1 className={styles.title}>Вход</h1>
+          <form onSubmit={handleSubmit}>
+            <div className={styles.inputContainer}>
+              <label className={styles.label}>Email:</label>
               <Input
-                type={showPassword ? 'text' : 'password'}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                type="email"
+                variant="primary"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className={styles.inputField}
                 required
               />
-              {/* <FontAwesomeIcon
-                icon={showPassword ? faEyeSlash : faEye}
-                className={styles.passwordToggle}
-                onClick={togglePasswordVisibility}
-              /> */}
             </div>
-          </div>
-          {loginError && (
-            <p className={styles.error}>Ошибка входа. Проверьте email и пароль.</p>
-          )}
-          <BlackButton type="submit" className={styles.button}>Войти</BlackButton>
-        </form>
-      </div>
+            <div className={styles.inputContainer}>
+              <label className={styles.label}>Пароль:</label>
+              <div className={styles.passwordInput}>
+                <Input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className={styles.inputField}
+                  required
+                />
+              </div>
+            </div>
+            {loginError && (
+              <p className={styles.error}>Ошибка входа. Проверьте email и пароль.</p>
+            )}
+            <Button type="primary" className={styles.button}>Войти</Button>
+          </form>
+        </div>
+      </AntdConfig>
     </div>
   );
 }
