@@ -7,8 +7,7 @@ import { useFavorite } from "../../FavoriteContext";
 function CatalogPage() {
   const [bags, setBags] = useState([]);
   const { cartItems, setCartItems } = useContext(CartContext);
-  const { favorites, addToFavorites, removeFromFavorites, isItemInFavorites } =
-  useFavorite();
+  const { addToFavorites, removeFromFavorites, isItemInFavorites } = useFavorite();
 
   useEffect(() => {
     async function fetchData() {
