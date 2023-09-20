@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../image/icon/logo.png';
+
 import styles from './Footer.module.css';
 import { Link } from 'react-router-dom';
 import AntdConfig from '../antdConfig/AntdConfig';
@@ -24,31 +25,33 @@ const Footer = () => {
             </div>
             <div className={styles.footer_categories}>
               <h6>Категории</h6>
-              <Link to="#">lorem ipsum dolor</Link>
-              <Link to="#">lorem ipsum dolor</Link>
-              <Link to="#">lorem ipsum dolor</Link>
-              <Link to="#">lorem ipsum dolor</Link>
-              <Link to="#">lorem ipsum dolor</Link>
-              <Link to="#">lorem ipsum dolor</Link>
+              <Link to="#">lorem</Link>
+              <Link to="#">lorem</Link>
+              <Link to="#">lorem</Link>
+              <Link to="#">lorem</Link>
+              <Link to="#">lorem</Link>
+              <Link to="#">lorem</Link>
             </div>
             <div className={styles.footer_faq}>
               <h6>Клиентам</h6>
-              <Link to="#">lorem ipsum dolor</Link>
-              <Link to="#">lorem ipsum dolor</Link>
-              <Link to="#">lorem ipsum dolor</Link>
-              <Link to="#">lorem ipsum dolor</Link>
-              <Link to="#">lorem ipsum dolor</Link>
-              <Link to="#">lorem ipsum dolor</Link>
+              <Link to="#">lorem</Link>
+              <Link to="#">lorem</Link>
+              <Link to="#">lorem</Link>
+              <Link to="#">lorem</Link>
+              <Link to="#">lorem</Link>
+              <Link to="#">lorem</Link>
             </div>
             <div className={styles.footer_contacts}>
               <h6>подписка на рассылку</h6>
+              <div className={styles.footer_input}>
               <Search
                 placeholder="Ваш Email"
-                allowClear
                 enterButton="Подписаться"
                 size="large"
+                bordered={false}
                 onSearch={onSearch}
               />
+              </div>
               <Link>katysoho.ua@gmail.com</Link>
               <Link>+380 (97) 407 92 83</Link>
               <Link>Написать в Viber</Link>

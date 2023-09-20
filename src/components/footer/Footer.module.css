@@ -3,7 +3,7 @@
 }
 
 .footer_logo img {
-  width: 100px;
+  width: 125px;
 }
 
 .footer_faq,
@@ -66,4 +66,9 @@ h6 {
 .footer_socials {
   display: flex;
   gap: 14px;
+}
+
+.footer_input {
+  border: 2px solid white;
+  background-color: white;
 }

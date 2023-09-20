@@ -58,8 +58,6 @@ const Header = () => {
           </li>
           <li onClick={closeMenu}>
             <Link to="/profile">
-
-
               <FaUser />
             </Link>
           </li>
