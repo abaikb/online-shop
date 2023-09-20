@@ -46,7 +46,6 @@ function CatalogPage() {
             key={bag.id}
             bag={bag}
             addToCart={addToCart}
-            // Add favorite functionality
             addToFavorites={() => addToFavorites(bag)}
             removeFromFavorites={() => removeFromFavorites(bag.id)} 
             isFavorite={isItemInFavorites(bag.id)

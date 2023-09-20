@@ -4,6 +4,7 @@
 
 .footer_logo img {
   width: 125px;
+  margin-bottom: 30px;
 }
 
 .footer_faq,
@@ -63,6 +64,12 @@ h6 {
   text-transform: uppercase;
 }
 
+.footer_contacts a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
 .footer_socials {
   display: flex;
   gap: 14px;
@@ -71,4 +78,27 @@ h6 {
 .footer_input {
   border: 2px solid white;
   background-color: white;
+}
+
+.footer a {
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #ff5733;
+  transition: 0.3s;
+}
+
+.footer_payments {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 20px;
+  color: white;
+  font-size: 30px;
+}
+
+.footer_payments img:last-child {
+  height: 20px;
+  width: 190px;
 }
