@@ -11,7 +11,7 @@ export default function ProfilePage() {
 
   const getProfileData = async (values) => {
     try {
-      const response = await axios.put(`${API_BASE_URL}/account/profile`);
+      const response = await axios.get(`${API_BASE_URL}/account/profile`);
       console.log(response.data);
     } catch (error) {
       console.error(error);

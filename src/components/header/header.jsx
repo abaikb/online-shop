@@ -3,13 +3,13 @@ import { FaHeart, FaShoppingCart, FaUser, FaBars, FaTimes, FaSearch } from 'reac
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 import logo from '../image/icon/logo.png';
-import { CartContext } from '../../CartContext'; // Импортируйте контекст для корзины
-import { FavoriteContext } from '../../FavoriteContext'; // Импортируйте контекст для избранного
+import { CartContext } from '../../CartContext';
+import { FavoriteContext } from '../../FavoriteContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { cartItems } = useContext(CartContext); // Получите данные о корзине из контекста
-  const { favorites } = useContext(FavoriteContext); // Получите данные об избранном из контекста
+  const { cartItems } = useContext(CartContext);
+  const { favorites } = useContext(FavoriteContext);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -26,41 +26,44 @@ const Header = () => {
           <img src={logo} alt="Логотип магазина" />
         </Link>
       </div>
-
+      <div className={styles.header_categories}>
+        <li onClick={closeMenu}><Link>lorem</Link></li>
+        <li onClick={closeMenu}><Link>lorem</Link></li>
+        <li onClick={closeMenu}><Link>lorem</Link></li>
+        <li onClick={closeMenu}><Link>lorem</Link></li>
+        <li onClick={closeMenu}><Link>lorem</Link></li>
+        <li onClick={closeMenu}><Link>lorem</Link></li>
+      </div>
       <div className={`${styles.burger} ${styles.mobileOnly}`} onClick={toggleMenu}>
         {isMenuOpen ? <FaTimes /> : <FaBars />}
       </div>
 
       <nav className={`${styles.navigation} ${styles.mobileOnly} ${isMenuOpen ? styles.open : ''}`}>
-        <ul className={styles['nav-list']}>
-          <li onClick={closeMenu}>
-            <Link to="tel:+1234567890"> +1234567890</Link>
-          </li>
-          <li onClick={closeMenu}>
-            <Link to="/catalog">Каталог</Link>
-          </li>
-          <li>
-            <Link>
-              <FaSearch />
-            </Link>
-          </li>
-          <li onClick={closeMenu}>
-            <Link to="/favorites">
-              <FaHeart />
-              {favorites.length > 0 && <span className={styles.indicator}>{favorites.length}</span>}
-            </Link>
-          </li>
-          <li onClick={closeMenu}>
-            <Link to="/cart">
-              <FaShoppingCart />
-              {cartItems.length > 0 && <span className={styles.indicator}>{cartItems.length}</span>}
-            </Link>
-          </li>
-          <li onClick={closeMenu}>
-            <Link to="/profile">
-              <FaUser />
-            </Link>
-          </li>
+        <ul className={styles.header_nav}>
+          <div className={styles.header_icons}>
+            <li>
+              <Link>
+                <FaSearch />
+              </Link>
+            </li>
+            <li onClick={closeMenu}>
+              <Link to="/favorites">
+                <FaHeart />
+                {favorites.length > 0 && <span className={styles.indicator}>{favorites.length}</span>}
+              </Link>
+            </li>
+            <li onClick={closeMenu}>
+              <Link to="/cart">
+                <FaShoppingCart />
+                {cartItems.length > 0 && <span className={styles.indicator}>{cartItems.length}</span>}
+              </Link>
+            </li>
+            <li onClick={closeMenu}>
+              <Link to="/profile">
+                <FaUser />
+              </Link>
+            </li>
+          </div>
         </ul>
       </nav>
     </header>

@@ -85,7 +85,7 @@ function LoginForm() {
             {loginError && (
               <p className={styles.error}>Ошибка входа. Проверьте email и пароль.</p>
             )}
-            <Button type="primary" className={styles.button}>Войти</Button>
+            <Button type="primary" className={styles.button} onClick={handleSubmit}>Войти</Button>
           </form>
         </div>
       </AntdConfig>

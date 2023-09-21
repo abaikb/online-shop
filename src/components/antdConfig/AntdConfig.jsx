@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { ConfigProvider } from 'antd';
 
 const AntdConfig = ({ children }) => {
