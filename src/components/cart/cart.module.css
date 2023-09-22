@@ -7,6 +7,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 15px;
+  padding: 50px 0;
 }
 
 .cart_item h6 {
@@ -50,6 +51,19 @@ line-height: 26px;
 	height: 100%;
 	object-position: center;
 	object-fit: cover;
+}
+
+.checkout_link {
+  display: flex;
+  align-items: center;
+}
+
+.checkout_link h4 {
+  font-size: 24px;
+}
+
+.checkout_link span {
+  font-weight: 700;
 }
 
 @media (max-width: 1100px) {

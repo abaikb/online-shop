@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
-import Cart from '../../components/cart/cart';
+import Cart from '../../components/cart/Cart';
 import { CartContext } from '../../context/CartContext';
+import CheckoutForm from '../../components/checkoutForm/CheckoutForm';
 
 const CartPage = () => {
   const { cartItems, setCartItems } = useContext(CartContext);
@@ -19,7 +20,7 @@ const CartPage = () => {
 
   const decrementItem = (itemId) => {
     const updatedCartItems = cartItems.map((cartItem) =>
-      cartItem.id === itemId && cartItem.quantity > 0
+      cartItem.id === itemId && cartItem.quantity > 1
         ? { ...cartItem, quantity: cartItem.quantity - 1 }
         : cartItem
     );
@@ -32,9 +33,9 @@ const CartPage = () => {
   };
 
   return (
-    <div>
+    <section>
       <Cart cartItems={cartItems} removeFromCart={removeFromCart} incrementItem={incrementItem} decrementItem={decrementItem} />
-    </div>
+    </section>
   );
 };
 
