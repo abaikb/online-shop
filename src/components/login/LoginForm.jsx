@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import styles from './LoginForm.module.css';
-// import Button from '../Button/Button';
 import { Input, ConfigProvider, Button } from 'antd';
-import AntdConfig from '../antdConfig/AntdConfig';
+import AntdConfig from '../../config/AntdConfig';
 
 function LoginForm() {
   const navigate = useNavigate(); // Получите объект navigate

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Input, Card } from 'antd';
 
-import AntdConfig from "../antdConfig/AntdConfig";
+import AntdConfig from '../../config/AntdConfig';
 
 import styles from './CheckoutForm.module.css'
 

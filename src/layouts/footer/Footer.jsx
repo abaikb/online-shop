@@ -7,7 +7,7 @@ import { RiVisaLine } from 'react-icons/ri';
 import { BiLogoMastercard } from 'react-icons/bi';
 import styles from './Footer.module.css';
 import { Link } from 'react-router-dom';
-import AntdConfig from '../../components/antdConfig/AntdConfig';
+import AntdConfig from '../../config/AntdConfig';
 import { Button, Input } from 'antd';
 import payments from '../../assets/images/icons/payment-methods.png';
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import styles from './RegistrationForm.module.css';
-import BlackButton from '../antdConfig/AntdConfig';
+import AntdConfig from '../../config/AntdConfig';
 import { Input } from 'antd';
 import API_BASE_URL from '../../api/BASE_URL'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -88,7 +88,7 @@ function RegistrationForm() {
               required
             />
           </div>
-          <BlackButton type="submit" className={styles.button}>Зарегистрироваться</BlackButton>
+          <button type="submit" className={styles.button}>Зарегистрироваться</button>
         </form>
       )}
     </div>

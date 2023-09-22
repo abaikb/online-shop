@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './cart.module.css';
 import { Button, Input, Card } from 'antd';
-import AntdConfig from '../antdConfig/AntdConfig';
+import AntdConfig from '../../config/AntdConfig';
 
 const Cart = ({ cartItems, removeFromCart, incrementItem, decrementItem }) => {
   const calculateTotalPrice = () => {
