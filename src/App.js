@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { CartProvider } from './CartContext';
-import { FavoriteProvider } from './FavoriteContext';
 
+import { CartProvider } from './context/CartContext';
+import { FavoriteProvider } from './context/FavoriteContext';
 import Layout from './components/Layout/Layout';
 import HomePage from './pages/HomePage/HomePage';
 import CatalogPage from './pages/catalogPage/bag';
@@ -11,7 +11,8 @@ import CartPage from './pages/CartPage/CartPage.jsx';
 import Favorite from './pages/FavoritePage/fav.jsx';
 import LoginPage from './pages/LoginPage/LoginPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
-import './App.css';
+
+import './assets/styles/globals.css';
 
 function App() {
   return (

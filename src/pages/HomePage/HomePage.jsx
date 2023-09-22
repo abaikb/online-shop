@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './HomePage.module.css';
-import bg from '../../components/image/hero-bg.png';
+import bg from '../../assets/images/hero-bg.png';
 import AntdConfig from '../../components/antdConfig/AntdConfig';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';

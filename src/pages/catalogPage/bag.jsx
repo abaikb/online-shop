@@ -1,14 +1,14 @@
 import React, { useEffect, useContext, useState } from 'react';
 import BagCard from '../../components/BagCard/BagCard';
 import styles from './CatalogPage.module.css';
-import { CartContext } from '../../CartContext';
-import { useFavorite } from "../../FavoriteContext";
+import { CartContext } from '../../context/CartContext';
+import { useFavorite } from "../../context/FavoriteContext";
 
 function CatalogPage() {
   const [bags, setBags] = useState([]);
   const { cartItems, setCartItems } = useContext(CartContext);
   const { favorites, addToFavorites, removeFromFavorites, isItemInFavorites } =
-  useFavorite();
+    useFavorite();
 
   useEffect(() => {
     async function fetchData() {
@@ -39,7 +39,7 @@ function CatalogPage() {
 
   return (
     <div className={styles.CatalogPage}>
-      <h1>Женские сумки</h1>
+      <h2 className="page_title">каталог</h2>
       <div className={styles["bag-list"]}>
         {bags.map((bag) => (
           <BagCard
@@ -47,7 +47,7 @@ function CatalogPage() {
             bag={bag}
             addToCart={addToCart}
             addToFavorites={() => addToFavorites(bag)}
-            removeFromFavorites={() => removeFromFavorites(bag.id)} 
+            removeFromFavorites={() => removeFromFavorites(bag.id)}
             isFavorite={isItemInFavorites(bag.id)
             }
           />

@@ -2,9 +2,9 @@ import React, { useState, useContext } from 'react';
 import { FaHeart, FaShoppingCart, FaUser, FaBars, FaTimes, FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
-import logo from '../image/icon/logo.png';
-import { CartContext } from '../../CartContext';
-import { FavoriteContext } from '../../FavoriteContext';
+import logo from '../../assets/images/icons/logo.png';
+import { CartContext } from '../../context/CartContext';
+import { FavoriteContext } from '../../context/FavoriteContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

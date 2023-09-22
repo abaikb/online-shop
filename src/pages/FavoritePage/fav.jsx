@@ -1,5 +1,5 @@
 import React from "react";
-import { useFavorite } from "../../FavoriteContext";
+import { useFavorite } from "../../context/FavoriteContext";
 import styles from "./fav.module.css"; // Подключите стили
 
 const Favorite = () => {

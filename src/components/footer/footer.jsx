@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../image/icon/logo.png';
+import logo from '../../assets/images/icons/logo.png';
 import { BsTelegram, BsInstagram } from 'react-icons/bs';
 import { FaViber, FaTiktok, FaGooglePay, FaApplePay } from 'react-icons/fa';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
@@ -9,7 +9,7 @@ import styles from './Footer.module.css';
 import { Link } from 'react-router-dom';
 import AntdConfig from '../antdConfig/AntdConfig';
 import { Button, Input } from 'antd';
-import payments from '../image/icon/payment-methods.png'
+import payments from '../../assets/images/icons/payment-methods.png';
 
 const { Search } = Input;
 

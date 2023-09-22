@@ -2,9 +2,9 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom'; // Import Link
 import styles from './BagDetailPage.module.css';
 import { FaShoppingCart, FaHeart, FaMapMarkerAlt } from 'react-icons/fa';
-import { CartContext } from '../../CartContext';
+import { CartContext } from '../../context/CartContext';
 import BagCard from '../../components/BagCard/BagCard'; // Import the BagCard component
-import { useFavorite } from "../../FavoriteContext"; // Import the useFavorite context
+import { useFavorite } from "../../context/FavoriteContext"; // Import the useFavorite context
 
 function BagDetailPage() {
   const { id } = useParams();

@@ -36,7 +36,7 @@ const Cart = ({ cartItems, removeFromCart, incrementItem, decrementItem }) => {
     <section className={styles.cart}>
       <AntdConfig>
         <div className="container">
-          <h2>корзина</h2>
+          <h2 className="page_title">корзина</h2>
           {cartItems.length === 0 ? (
             <p>Корзина пуста</p>
           ) : (
