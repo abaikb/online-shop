@@ -1,30 +1,41 @@
 import React from 'react'
 import API_BASE_URL from '../../api/BASE_URL';
 import axios from 'axios';
+import styles from './ProfilePage.module.css';
 
 export default function ProfilePage() {
-  const headers = {
-    "Authorization": `${JSON.parse(localStorage.getItem('token')).access}`,
-    "X-CSRFToken": 'Rl6v9oBwdXPRDrmB5iEExQENJl85CuGfMjvkpDMRLQCrRJKd6AmGzoimhNpVOL0u',
-    "Content-Type": "application/json"
-  };
 
-  const getProfileData = async (values) => {
+  const getProfileData = async () => {
     try {
-      const response = await axios.get(`${API_BASE_URL}/account/profile`);
+      const token = JSON.parse(localStorage.getItem('token')).access;
+
+      const response = await axios.patch(
+        `${API_BASE_URL}/account/edit_profile/`,
+        {},
+        {
+          headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+  
       console.log(response.data);
     } catch (error) {
       console.error(error);
     }
-  }
+  };
+  
 
   getProfileData();
 
   return (
-    <div>
+    <section className={styles.profile}>
       <div className="container">
-
+        
       </div>
-    </div>
+    </section>
   )
 }
+
+// `Bearer ${JSON.parse(localStorage.getItem('token')).access}`

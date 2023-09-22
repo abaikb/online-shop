@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styles from './cart.module.css';
+import { Button, Input, Card } from 'antd';
+import AntdConfig from '../antdConfig/AntdConfig';
 
 const Cart = ({ cartItems, removeFromCart, incrementItem, decrementItem }) => {
   const calculateTotalPrice = () => {
@@ -22,9 +24,7 @@ const Cart = ({ cartItems, removeFromCart, incrementItem, decrementItem }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Здесь вы можете обработать отправку данных заказа, например, через API
     console.log('Отправленные данные заказа:', formData);
-    // Очистить форму после отправки, если необходимо
     setFormData({
       name: '',
       address: '',
@@ -33,61 +33,75 @@ const Cart = ({ cartItems, removeFromCart, incrementItem, decrementItem }) => {
   };
 
   return (
-    <div className={styles.cart}>
-      <h2>Ваша корзина</h2>
-      {cartItems.length === 0 ? (
-        <p>Корзина пуста</p>
-      ) : (
-        <div>
-          <ul>
-            {cartItems.map((cartItem) => (
-              <li key={cartItem.id}>
-                {cartItem.name} - {cartItem.quantity} шт. - {cartItem.price * cartItem.quantity} сом
-                <div className={styles.buttons}>
-                  <button onClick={() => incrementItem(cartItem.id)}>+</button>
-                  <button onClick={() => decrementItem(cartItem.id)}>-</button>
-                  <button onClick={() => removeFromCart(cartItem.id)}>Удалить</button>
-                </div>
-              </li>
-            ))}
-          </ul>
-          <p>Общая стоимость: {calculateTotalPrice()} сом</p>
-          <div className={styles.orderForm}>
-            <h3>Оформление заказа</h3>
-            <form onSubmit={handleSubmit}>
-              <label htmlFor="name">Имя:</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleInputChange}
-                required
-              />
-              <label htmlFor="address">Адрес:</label>
-              <input
-                type="text"
-                id="address"
-                name="address"
-                value={formData.address}
-                onChange={handleInputChange}
-                required
-              />
-              <label htmlFor="phone">Телефон:</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={formData.phone}
-                onChange={handleInputChange}
-                required
-              />
-              <button type="submit">Оформить заказ</button>
-            </form>
-          </div>
+    <section className={styles.cart}>
+      <AntdConfig>
+        <div className="container">
+          <h2>корзина</h2>
+          {cartItems.length === 0 ? (
+            <p>Корзина пуста</p>
+          ) : (
+            <div>
+              <div className={styles.cart_items}>
+                {cartItems.map((cartItem) => (
+                  <Card
+                    key={cartItem.id}
+                    cover={<div className={styles.cart_item_cover}><img src={cartItem.image} /></div>}
+                    className={styles.cart_item}
+                  >
+                    <div className={styles.cart_item_content}>
+                      <h6>{cartItem.name}</h6>
+                      <div className={styles.cart_item_price}>
+                        <p>{cartItem.quantity} шт.</p>
+                        <p>{cartItem.price * cartItem.quantity} сом</p>
+                      </div>
+                      <div className={styles.cart_item_buttons}>
+                        <Button onClick={() => incrementItem(cartItem.id)}>+</Button>
+                        <Button onClick={() => decrementItem(cartItem.id)}>-</Button>
+                        <Button onClick={() => removeFromCart(cartItem.id)}>Удалить</Button>
+                      </div>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+              <p>Общая стоимость: {calculateTotalPrice()} сом</p>
+              {/* <div className={styles.orderForm}>
+                <h3>Оформление заказа</h3>
+                <form onSubmit={handleSubmit}>
+                  <label htmlFor="name">Имя:</label>
+                  <Input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <label htmlFor="address">Адрес:</label>
+                  <Input
+                    type="text"
+                    id="address"
+                    name="address"
+                    value={formData.address}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <label htmlFor="phone">Телефон:</label>
+                  <Input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <Button type="primary">Оформить заказ</Button>
+                </form>
+              </div> */}
+            </div>
+          )}
         </div>
-      )}
-    </div>
+      </AntdConfig>
+    </section>
   );
 };
 

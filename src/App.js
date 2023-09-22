@@ -7,7 +7,7 @@ import Layout from './components/Layout/Layout';
 import HomePage from './pages/HomePage/HomePage';
 import CatalogPage from './pages/catalogPage/bag';
 import BagDetailPage from './pages/DetailPage/detail.jsx';
-import CartPage from './pages/CartPage';
+import CartPage from './pages/CartPage/CartPage.jsx';
 import Favorite from './pages/FavoritePage/fav.jsx';
 import LoginPage from './pages/LoginPage/LoginPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';

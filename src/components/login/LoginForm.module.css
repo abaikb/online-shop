@@ -57,6 +57,6 @@
     color: red;
 }
 
-input {
-  border-radius: 0;
+.login input {
+  border-radius: 0px;
 }
