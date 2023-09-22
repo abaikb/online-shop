@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { CartProvider } from './context/CartContext';
 import { FavoriteProvider } from './context/FavoriteContext';
-import Layout from './components/Layout/Layout';
+import Layout from './layouts/Layout';
 import HomePage from './pages/HomePage/HomePage';
 import CatalogPage from './pages/catalogPage/bag';
 import BagDetailPage from './pages/DetailPage/detail.jsx';

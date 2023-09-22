@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Cart.module.css';
+import styles from './cart.module.css';
 import { Button, Input, Card } from 'antd';
 import AntdConfig from '../antdConfig/AntdConfig';
 
