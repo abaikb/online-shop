@@ -41,12 +41,17 @@ const Cart = ({ cartItems, removeFromCart, incrementItem, decrementItem }) => {
                 ))}
               </div>
               <div className={styles.checkout_link}>
-                <h4>Общая стоимость: <span>{calculateTotalPrice()} сом</span></h4>
-                <Link to="/checkout">
-                  <Button type="primary">
-                    Перейти к оплате
-                  </Button>
-                </Link>
+                <div>
+                  <div className={styles.checkout_link_title}>
+                    <h4>Общая стоимость:</h4>
+                    <p className={styles.checkout_price}>{calculateTotalPrice()} сом</p>
+                  </div>
+                  <Link to="/checkout">
+                    <Button size='large' type='primary'>
+                      Перейти к оплате
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           )}
