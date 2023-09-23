@@ -8,7 +8,7 @@ const Favorite = () => {
   const { favorites } = useFavorite();
 
   return (
-    <section>
+    <section className={styles.favorites}>
       <AntdConfig>
         <div className="container">
           {favorites.map((favorites) => (
