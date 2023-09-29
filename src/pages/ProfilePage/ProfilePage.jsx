@@ -1,41 +1,43 @@
-import React from 'react'
-import API_BASE_URL from '../../api/BASE_URL';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import styles from './ProfilePage.module.css';
+import { Card, Avatar, Typography } from 'antd';
+import API_BASE_URL from '../../api/BASE_URL';
 
-export default function ProfilePage() {
+const { Title, Text } = Typography;
 
-  const getProfileData = async () => {
-    try {
-      const token = JSON.parse(localStorage.getItem('token')).access;
+const ProfilePage = () => {
+  // const [userData, setUserData] = useState(null);
 
-      const response = await axios.patch(
-        `${API_BASE_URL}/account/edit_profile/`,
-        {},
-        {
-          headers: {
-            "Authorization": `Bearer ${token}`,
-            "Content-Type": "application/json",
-          },
-        }
-      );
-  
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-  
+  // useEffect(() => {
 
-  getProfileData();
+  //   const token = JSON.parse(localStorage.getItem('token')).access;
+
+  //   axios.get(`${API_BASE_URL}/account/edit_profile/`, {
+  //     headers: {
+  //       Authorization: `Bearer ${token}`,
+  //       'Content-Type': 'application/json',
+  //     },
+  //   })
+  //     .then((response) => {
+  //       setUserData(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error fetching user profile:', error);
+  //     });
+  // }, []);
 
   return (
-    <section className={styles.profile}>
-      <div className="container">
-        
-      </div>
-    </section>
-  )
-}
+    <div>
+      {/* {userData && (
+        <Card>
+          <Avatar size={64} src={userData.profile_image} />
+          <Title>{userData.first_name} {userData.last_name}</Title>
+          <Text>Date of Birth: {userData.date_birth}</Text>
+          <Text>City: {userData.city}</Text>
+        </Card>
+      )} */}
+    </div>
+  );
+};
 
-// `Bearer ${JSON.parse(localStorage.getItem('token')).access}`
+export default ProfilePage;

@@ -38,22 +38,25 @@ function CatalogPage() {
   };
 
   return (
-    <div className={styles.CatalogPage}>
+    <section className={styles.CatalogPage}>
+      <div className="container">
+        
       <h2 className="page_title">каталог</h2>
-      <div className={styles["bag-list"]}>
+      <div className={styles.bag_grid}>
         {bags.map((bag) => (
           <BagCard
-            key={bag.id}
-            bag={bag}
-            addToCart={addToCart}
-            addToFavorites={() => addToFavorites(bag)}
-            removeFromFavorites={() => removeFromFavorites(bag.id)}
-            isFavorite={isItemInFavorites(bag.id)
-            }
+          key={bag.id}
+          bag={bag}
+          addToCart={addToCart}
+          addToFavorites={() => addToFavorites(bag)}
+          removeFromFavorites={() => removeFromFavorites(bag.id)}
+          isFavorite={isItemInFavorites(bag.id)
+          }
           />
-        ))}
+          ))}
+          </div>
       </div>
-    </div>
+    </section>
   );
 }
 

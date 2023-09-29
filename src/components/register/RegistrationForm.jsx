@@ -37,7 +37,7 @@ function RegistrationForm() {
     const isLengthValid = value.length >= 8;
 
     if (!containsCapitalLetter || !containsNumber || !isLengthValid) {
-      callback('Пароль должен содержать хотя бы одну заглавную букву, одну цифру и быть не менее 8 символов длиной');
+      callback('');
     } else {
       callback();
     }
@@ -72,23 +72,10 @@ function RegistrationForm() {
       <Form
         name="basic"
         form={form}
-        labelCol={{
-          span: 8,
-        }}
-        wrapperCol={{
-          span: 16,
-        }}
-        style={{
-          maxWidth: 600,
-        }}
-        initialValues={{
-          remember: true,
-        }}
         autoComplete="off"
         onFinish={onFinish}
       >
         <Form.Item
-          label="email"
           name="email"
           rules={[
             {
@@ -98,12 +85,13 @@ function RegistrationForm() {
             },
           ]}
         >
-          <Input onChange={validateAllFields} />
+          <Input zzonChange={validateAllFields} />
         </Form.Item>
 
         <Form.Item
-          label="пароль"
           name="password"
+          validateStatus={form.getFieldError('password') ? 'error' : ''}
+          help={form.getFieldError('password') ? 'Пароль должен содержать хотя бы одну заглавную букву, одну цифру и быть не менее 8 символов длиной' : ''}
           rules={[
             {
               required: true,
@@ -117,7 +105,6 @@ function RegistrationForm() {
           <Input.Password onChange={validateAllFields} />
         </Form.Item>
         <Form.Item
-          label="подтвердите пароль"
           name="password2"
           rules={[
             {
@@ -142,14 +129,10 @@ function RegistrationForm() {
             Зарегистрироваться
           </Button>
         </Form.Item>
-
-        <Form.Item>
-          <Text type="warning">Пароль должен содержать хотя бы одну заглавную букву, одну цифру и быть не менее 8 символов длиной</Text>
-        </Form.Item>
       </Form>
       <Modal
         title={registrationSuccess ? 'Регистрация успешна' : 'Ошибка при регистрации'}
-        visible={isModalVisible}
+        open={isModalVisible}
         onOk={handleModalOk}
         okText="OK"
         cancelButtonProps={{ style: { display: 'none' } }}

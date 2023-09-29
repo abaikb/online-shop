@@ -1,95 +1,80 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Button, Form, Input } from 'antd';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import styles from './LoginForm.module.css';
-import { Input, ConfigProvider, Button } from 'antd';
-import AntdConfig from '../../config/AntdConfig';
+import API_BASE_URL from '../../api/BASE_URL';
 
-function LoginForm() {
-  const navigate = useNavigate(); // Получите объект navigate
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
-  const [loginError, setLoginError] = useState(false);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const url = 'http://34.107.117.216/account/login/';
-    const headers = {
-      'accept': 'application/json',
-      'Content-Type': 'application/json',
-      'X-CSRFToken': 'Rl6v9oBwdXPRDrmB5iEExQENJl85CuGfMjvkpDMRLQCrRJKd6AmGzoimhNpVOL0u'
-    };
-
-    const data = {
-      email,
-      password
-    };
-
-    try {
-      const response = await axios.post(url, data, { headers });
-      const token = response.data;
-      localStorage.setItem('token', JSON.stringify(token));
-      console.log('Успешный ответ от сервера:', response.data);
-      navigate('/catalog');
-    } catch (error) {
-      console.error('Ошибка при отправке запроса:', error);
-      setLoginError(true);
-    }
+const onFinish = async (values) => {
+  const headers = {
+    'accept': 'application/json',
+    'X-CSRFToken': 'YfvpG5L7YMT3tm30vBQAROFzWALhMG1XBDUr0EzsrRlhzS2VmGOafmY9biSOUosM'
   };
 
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
+  try {
+    const response = await axios.post(`${API_BASE_URL}/account/login/`, values, { headers });
+    console.log('Успешный ответ от сервера:', response.data);
+  } catch (error) {
+    console.error('Ошибка при отправке запроса:', error);
+  }
+};
 
-  return (
-    <div className={styles.login}>
-      <AntdConfig
-        theme={{
-          token: {
-            colorPrimary: '#000000',
-            colorPrimaryHover: '#2d2d2d',
-            borderRadius: 0,
-            colorBgContainer: '#ffffff',
-          },
-        }}
-      >
-        <div className={styles.container}>
-          <h1 className={styles.title}>Вход</h1>
-          <form onSubmit={handleSubmit}>
-            <div className={styles.inputContainer}>
-              <label className={styles.label}>Email:</label>
-              <Input
-                type="email"
-                variant="primary"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className={styles.inputField}
-                required
-              />
-            </div>
-            <div className={styles.inputContainer}>
-              <label className={styles.label}>Пароль:</label>
-              <div className={styles.passwordInput}>
-                <Input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className={styles.inputField}
-                  required
-                />
-              </div>
-            </div>
-            {loginError && (
-              <p className={styles.error}>Ошибка входа. Проверьте email и пароль.</p>
-            )}
-            <Button type="primary" className={styles.button} onClick={handleSubmit}>Войти</Button>
-          </form>
-        </div>
-      </AntdConfig>
-    </div>
-  );
-}
+
+const onFinishFailed = (errorInfo) => {
+  console.log('Failed:', errorInfo);
+};
+
+const LoginForm = () => (
+  <Form
+    name="basic"
+    labelCol={{
+      span: 8,
+    }}
+    wrapperCol={{
+      span: 16,
+    }}
+    style={{
+      maxWidth: 600,
+    }}
+    onFinish={onFinish}
+    onFinishFailed={onFinishFailed}
+    autoComplete="off"
+  >
+    <Form.Item
+      label="Email"
+      name="email"
+      rules={[
+        {
+          required: true,
+          message: 'Please input your email!',
+        },
+      ]}
+    >
+      <Input type="email" />
+    </Form.Item>
+
+    <Form.Item
+      label="Password"
+      name="password"
+      rules={[
+        {
+          required: true,
+          message: 'Please input your password!',
+        },
+      ]}
+    >
+      <Input.Password />
+    </Form.Item>
+
+    <Form.Item
+      wrapperCol={{
+        offset: 8,
+        span: 16,
+      }}
+    >
+      <Button type="primary" htmlType="submit">
+        Войти
+      </Button>
+    </Form.Item>
+  </Form>
+);
 
 export default LoginForm;
