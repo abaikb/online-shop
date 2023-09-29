@@ -8,7 +8,7 @@ function CatalogPage() {
   const [bags, setBags] = useState([]);
   const { cartItems, setCartItems } = useContext(CartContext);
   const { favorites, addToFavorites, removeFromFavorites, isItemInFavorites } =
-    useFavorite();
+  useFavorite();
 
   useEffect(() => {
     async function fetchData() {
