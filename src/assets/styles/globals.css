@@ -45,6 +45,11 @@ button {
   text-transform: uppercase;
 }
 
+section {
+  min-height: 100vh;
+  padding: 15px 0;
+}
+
 .page_title {
   color: #242424;
   text-align: center;

@@ -1,6 +1,9 @@
 import React from 'react';
 import styles from './HomePage.module.css';
-import BlackButton from '../../components/antdConfig/AntdConfig';
+import AntdConfig from '../../config/AntdConfig';
+import { Button } from 'antd';
+import { Link } from 'react-router-dom';
+import bg from '../../assets/images/hero-bg.png';
 
 const HomePage = () => {
 
@@ -10,7 +13,7 @@ const HomePage = () => {
         <div className="container">
           <div className={styles.home_wrapper}>
             <div className={styles.home_bg}>
-              <img src={bg} alt="Background" />
+              <img src={bg} alt="Фон" />
             </div>
             <div>
               <h2>Добро пожаловать на главную страницу!</h2>

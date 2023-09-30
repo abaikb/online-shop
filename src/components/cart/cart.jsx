@@ -10,14 +10,19 @@ const Cart = ({ cartItems, removeFromCart, incrementItem, decrementItem }) => {
   };
 
   return (
-    <div className={styles.cart}>
+    <section className={styles.cart}>
       <AntdConfig>
         <div className="container">
-          <h2 className="page_title">корзина</h2>
           {cartItems.length === 0 ? (
-            <p>Корзина пуста</p>
+            <div className={styles.empty}>
+              <h2 className="page_title">Корзина пуста</h2>
+              <Link to="/catalog">
+                <Button type="primary" size='large'>Каталог</Button>
+              </Link>
+            </div>
           ) : (
             <div>
+              <h2 className="page_title">корзина</h2>
               <div className={styles.cart_items}>
                 {cartItems.map((cartItem) => (
                   <Card
@@ -57,7 +62,7 @@ const Cart = ({ cartItems, removeFromCart, incrementItem, decrementItem }) => {
           )}
         </div>
       </AntdConfig>
-    </div >
+    </section >
   );
 };
 
