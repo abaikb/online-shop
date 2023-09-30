@@ -1,0 +1,7 @@
+:root {
+  --orange-hover: rgb(255, 87, 51);
+  --text-color: rgb(45, 45, 45);
+  --black-color: rgb(0, 0, 0);
+  --white-color: rgb(255, 255, 255);
+  --transition-time: 0.3s;
+}

@@ -1,0 +1,42 @@
+.burger_nav {
+  background-color: var(--black-color);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 999;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+}
+
+div,
+ul {
+  color: var(--white-color);
+}
+
+.wrapper ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.wrapper ul:last-child {
+  gap: 10px;
+}
+
+.close_button {
+  height: 60px;
+  align-items: center;
+  display: flex;
+  justify-content: end;
+}
+
+.close_button p {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 18px;
+}

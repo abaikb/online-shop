@@ -5,6 +5,12 @@ import styles from './Header.module.css';
 import logo from '../../assets/images/icons/logo.png';
 import { CartContext } from '../../context/CartContext';
 import { FavoriteContext } from '../../context/FavoriteContext';
+import SearchIcon from '../../assets/images/icons/svg/searchIcon';
+import ProfileIcon from '../../assets/images/icons/svg/profileIcon';
+import HeartIcon from '../../assets/images/icons/svg/heartIcon';
+import CartIcon from '../../assets/images/icons/svg/cartIcon';
+import { BurgerIcon } from '../../assets/images/icons/svg/burgerIcon';
+import BurgerMenu from '../../components/burgerMenu/BurgerMenu';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,51 +27,29 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <div className={`${styles.logo} ${styles.img}`}>
-        <Link to="/">
-          <img src={logo} alt="Логотип магазина" />
-        </Link>
+      {/* <BurgerMenu /> */}
+      <div className="container">
+        <nav className={styles.desktop_nav}>
+          <BurgerIcon />
+          <Link to="/" className={styles.header_logo}>
+            <img src={logo} alt="Логотип" />
+          </Link>
+          <ul>
+            <Link>lorem</Link>
+            <Link>lorem</Link>
+            <Link>lorem</Link>
+            <Link>lorem</Link>
+            <Link>lorem</Link>
+            <Link>lorem</Link>
+          </ul>
+          <ul>
+            <Link>icon</Link>
+            <Link>icon</Link>
+            <Link>icon</Link>
+            <Link>icon</Link>
+          </ul>
+        </nav>
       </div>
-      <div className={styles.header_categories}>
-        <li onClick={closeMenu}><Link>lorem</Link></li>
-        <li onClick={closeMenu}><Link>lorem</Link></li>
-        <li onClick={closeMenu}><Link>lorem</Link></li>
-        <li onClick={closeMenu}><Link>lorem</Link></li>
-        <li onClick={closeMenu}><Link>lorem</Link></li>
-        <li onClick={closeMenu}><Link>lorem</Link></li>
-      </div>
-      <div className={`${styles.burger} ${styles.mobileOnly}`} onClick={toggleMenu}>
-        {isMenuOpen ? <FaTimes /> : <FaBars />}
-      </div>
-
-      <nav className={`${styles.navigation} ${styles.mobileOnly} ${isMenuOpen ? styles.open : ''}`}>
-        <ul className={styles.header_nav}>
-          <div className={styles.header_icons}>
-            <li>
-              <Link>
-                <FaSearch />
-              </Link>
-            </li>
-            <li onClick={closeMenu}>
-              <Link to="/favorites">
-                <FaHeart />
-                {favorites.length > 0 && <span className={styles.indicator}>{favorites.length}</span>}
-              </Link>
-            </li>
-            <li onClick={closeMenu}>
-              <Link to="/cart">
-                <FaShoppingCart />
-                {cartItems.length > 0 && <span className={styles.indicator}>{cartItems.length}</span>}
-              </Link>
-            </li>
-            <li onClick={closeMenu}>
-              <Link to="/profile">
-                <FaUser />
-              </Link>
-            </li>
-          </div>
-        </ul>
-      </nav>
     </header>
   );
 };
