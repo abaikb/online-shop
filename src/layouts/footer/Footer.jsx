@@ -16,8 +16,8 @@ const { Search } = Input;
 const Footer = () => {
 
   const onSearch = () => {
-    console.log('search')
-  }
+    console.log('search');
+  };
 
   return (
     <footer className={styles.footer}>

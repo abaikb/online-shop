@@ -28,8 +28,7 @@
   gap: 33px;
 }
 
-div,
-ul {
+.burger_link {
   color: var(--white-color);
 }
 
@@ -66,4 +65,52 @@ ul {
 .header_nav {
   display: flex;
   align-items: center;
+}
+
+.header_link {
+  transition: var(--hover-transition);
+  position: relative;
+  color: var(--light-grey);
+}
+
+.header_link:hover {
+  color: var(--orange-hover);
+  transition: var(--hover-transition);
+}
+
+.indicator {
+  position: absolute;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  width: 15px;
+  height: 15px;
+  font-size: 9px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.burger_link {
+  color: var(--white-color);
+}
+
+.header_btn svg {
+  fill: var(--black-color);
+  transition: var(--hover-transition);
+}
+
+.header_btn svg path {
+  transition: var(--hover-transition);
+}
+
+.header_btn:hover {
+  svg {
+    fill: var(--orange-hover);
+    transition: var(--hover-transition);
+  }
+
+  svg path {
+    stroke: var(--orange-hover);
+    transition: var(--hover-transition);
+  }
 }

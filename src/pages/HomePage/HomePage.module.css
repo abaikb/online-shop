@@ -1,6 +1,5 @@
 .home {
   height: 100vh;
-  color: black;
   text-align: right;
 }
 
@@ -21,6 +20,7 @@ align-items: center;
   font-size: 50px;
   text-transform: uppercase;
   font-weight: 600;
+  color: var(--dark-grey);
 }
 
 .home p {

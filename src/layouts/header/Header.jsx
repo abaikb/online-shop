@@ -41,27 +41,27 @@ const Header = () => {
         <nav className={styles.burger_nav}>
           <div className="container">
             <div className={styles.close_button}>
-              <p onClick={closeMenu}>Закрыть</p>
+              <p onClick={closeMenu} className={styles.burger_link}>Закрыть</p>
             </div>
             <div className={styles.wrapper}>
               <ul>
-                <Link>lorem ipsum</Link>
-                <Link>lorem isdfsdfpsum</Link>
-                <Link>lorem ipsum</Link>
-                <Link>lorem ipsum</Link>
-                <Link>lorem ipsum</Link>
-                <Link>lorem isfpsum</Link>
-                <Link>lorem ipsum</Link>
-                <Link>lorem ipsum</Link>
+                <Link className={styles.burger_link}>lorem ipsum</Link>
+                <Link className={styles.burger_link}>lorem isdfsdfpsum</Link>
+                <Link className={styles.burger_link}>lorem ipsum</Link>
+                <Link className={styles.burger_link}>lorem ipsum</Link>
+                <Link className={styles.burger_link}>lorem ipsum</Link>
+                <Link className={styles.burger_link}>lorem isfpsum</Link>
+                <Link className={styles.burger_link}>lorem ipsum</Link>
+                <Link className={styles.burger_link}>lorem ipsum</Link>
               </ul>
               <ul>
-                <Link>contact</Link>
-                <Link>contacfsdfsdt</Link>
-                <Link>contact</Link>
-                <Link>contact</Link>
+                <Link className={styles.burger_link}>contact</Link>
+                <Link className={styles.burger_link}>contacfsdfsdt</Link>
+                <Link className={styles.burger_link}>contact</Link>
+                <Link className={styles.burger_link}>contact</Link>
                 <div>
-                  <Link>contact</Link>
-                  <Link>contact</Link>
+                  <Link className={styles.burger_link}>contact</Link>
+                  <Link className={styles.burger_link}>contact</Link>
                 </div>
               </ul>
             </div>
@@ -82,19 +82,29 @@ const Header = () => {
           </div>
           {isMobile === false && (
             <ul>
-              <Link>lorem</Link>
-              <Link>lorem</Link>
-              <Link>lorem</Link>
-              <Link>lorem</Link>
-              <Link>lorem</Link>
-              <Link>lorem</Link>
+              <Link className={styles.header_link}>lorem</Link>
+              <Link className={styles.header_link}>lorem</Link>
+              <Link className={styles.header_link}>lorem</Link>
+              <Link className={styles.header_link}>lorem</Link>
+              <Link className={styles.header_link}>lorem</Link>
+              <Link className={styles.header_link}>lorem</Link>
             </ul>
           )}
           <ul>
-            <Link>icon</Link>
-            <Link>icon</Link>
-            <Link>icon</Link>
-            <Link>icon</Link>
+            <Link className={styles.header_btn}>
+              <SearchIcon />
+            </Link>
+            <Link className={styles.header_btn}>
+              <ProfileIcon />
+            </Link>
+            <Link className={styles.header_btn}>
+              <HeartIcon />
+              {favorites.length > 0 && <div className={styles.indicator}>{favorites.length}</div>}
+            </Link>
+            <Link className={styles.header_btn} to="/cart">
+              <CartIcon />
+              {cartItems.length > 0 && <div className={styles.indicator}>{cartItems.length}</div>}
+            </Link>
           </ul>
         </nav>
       </div>

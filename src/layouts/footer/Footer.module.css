@@ -85,7 +85,7 @@ h6 {
 }
 
 .footer a:hover {
-  color: #ff5733;
+  color: var(--orange-hover);
   transition: 0.3s;
 }
 

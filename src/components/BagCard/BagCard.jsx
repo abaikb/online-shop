@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './BagCard.module.css';
 import { FaShoppingCart, FaHeart, FaMapMarkerAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import HeartIcon from '../../assets/images/icons/svg/heartIcon';
 
 const BagCard = ({ bag, addToCart, addToFavorites, removeFromFavorites, isFavorite }) => {
   const [showAddedMessage, setShowAddedMessage] = useState(false);
@@ -26,20 +27,21 @@ const BagCard = ({ bag, addToCart, addToFavorites, removeFromFavorites, isFavori
           <div className={styles.icons}>
             <p className={styles.bagPrice}>{bag.price} сом</p>
             <div>
-              <FaHeart
+              <HeartIcon className={styles.svg_stroke} />
+              {/* <FaHeart
                 className={`${styles.fav_icon} ${isFavorite ? styles.favorite : ''}`}
                 onClick={() =>
                   isFavorite ? removeFromFavorites(bag.id) : addToFavorites(bag)
                 }
-              />
+              /> */}
               <div className={styles.cartIconContainer}>
                 <FaShoppingCart
                   className={`${styles.icon} ${styles.cartIcon}`}
                   onClick={handleAddToCart}
                 />
-                {showAddedMessage && (
+                {/* {showAddedMessage && (
                   <p className={styles.addedMessage}>Товар добавлен в корзину</p>
-                )}
+                )} */}
               </div>
             </div>
           </div>
