@@ -92,17 +92,21 @@ const Header = () => {
           )}
           <ul>
             <Link className={styles.header_btn}>
-              <SearchIcon />
+              {/* <SearchIcon /> */}
+              search
             </Link>
             <Link className={styles.header_btn}>
-              <ProfileIcon />
+              {/* <ProfileIcon /> */}
+              profile
             </Link>
             <Link className={styles.header_btn}>
-              <HeartIcon />
+              {/* <HeartIcon /> */}
+              fav
               {favorites.length > 0 && <div className={styles.indicator}>{favorites.length}</div>}
             </Link>
             <Link className={styles.header_btn} to="/cart">
-              <CartIcon />
+              {/* <CartIcon /> */}
+              cart
               {cartItems.length > 0 && <div className={styles.indicator}>{cartItems.length}</div>}
             </Link>
           </ul>

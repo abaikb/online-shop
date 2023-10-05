@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom'; // Import Link
-import styles from './BagDetailPage.module.css';
+import styles from './DetailPage.module.css';
 import { FaShoppingCart, FaHeart, FaMapMarkerAlt } from 'react-icons/fa';
 import { CartContext } from '../../context/CartContext';
 import BagCard from '../../components/BagCard/BagCard'; // Import the BagCard component
 import { useFavorite } from "../../context/FavoriteContext"; // Import the useFavorite context
 
-function BagDetailPage() {
+function DetailPage() {
   const { id } = useParams();
   const [bag, setBag] = useState(null);
   const { cartItems, setCartItems } = useContext(CartContext);
@@ -118,4 +118,4 @@ function BagDetailPage() {
   );
 }
 
-export default BagDetailPage;
+export default DetailPage;
