@@ -1,0 +1,10 @@
+.icon {
+  color: var(--black-color);
+  transition: var(--hover-transition);
+  cursor: pointer;
+}
+
+.icon:hover {
+  color: var(--orange-hover);
+  transition: var(--hover-transition);
+}

@@ -3,3 +3,28 @@
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 30px;
 }
+
+@media (max-width: 1200px) {
+  .product_grid{ 
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 18px;
+  }
+}
+
+@media (max-width: 860px) {
+  .product_grid {
+    grid-gap: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .product_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 420px) {
+  .product_grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

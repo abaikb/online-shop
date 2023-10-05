@@ -59,7 +59,9 @@
 }
 
 .burger_button {
-  padding: 15px 20px 15px 0;
+  font-size: 36px;
+  height: 36px;
+  margin-right: 20px;
 }
 
 .header_nav {
@@ -71,6 +73,10 @@
   transition: var(--hover-transition);
   position: relative;
   color: var(--light-grey);
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 24px;
+  text-transform: lowercase;
 }
 
 .header_link:hover {
@@ -90,27 +96,33 @@
   align-items: center;
 }
 
+.header_btn a {
+  font-size: 30px;
+}
+
 .burger_link {
   color: var(--white-color);
 }
 
-.header_btn svg {
-  fill: var(--black-color);
-  transition: var(--hover-transition);
-}
-
-.header_btn svg path {
-  transition: var(--hover-transition);
-}
-
-.header_btn:hover {
-  svg {
-    fill: var(--orange-hover);
-    transition: var(--hover-transition);
+@media (max-width: 480px) {
+  .header {
+    height: 60px;
   }
 
-  svg path {
-    stroke: var(--orange-hover);
-    transition: var(--hover-transition);
+  .desktop_nav ul {
+    gap: 15px;
+  }
+
+  .header_btn a {
+    font-size: 26px;
+  }
+
+  .header_logo img {
+    height: 30px;
+  }
+
+  .burger_button {
+    font-size: 30px;
+    margin-right: 15px;
   }
 }

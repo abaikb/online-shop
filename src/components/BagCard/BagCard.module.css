@@ -1,144 +1,50 @@
-.bagCard {
-  display: flex;
-  text-align: left;
-  width: 290px;
-  flex-direction: column;
-  border: none;
-}
-
-.bagImage {
-  width: 100%;
+.img {
   height: 400px;
+  width: 100%;
+}
+
+.img img {
+  width: 100%;
+  height: 100%;
+  object-position: center;
   object-fit: cover;
-  margin-right: 16px;
 }
 
-.bagInfo {
-  flex: 1;
+.card h4 {
+  color: var(--black-color);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+  padding: 10px 0 13px;
 }
 
-.bagLink {
-  text-decoration: none;
-  color: inherit
+.card p {
+  color: var(--black-color);
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 26px;
 }
 
-.bagName {
-  font-size: 1.3rem;
-  margin: 0;
-}
-
-.icons {
-  margin-top: 10px;
+.card_info {
   display: flex;
   justify-content: space-between;
 }
 
-.icons > div {
+.btn {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 70px;
+  font-size: 36px;
+  gap: 5px;
+  align-items: center;
 }
 
-.fav_icon {
-  font-size: 1.5rem;
-  color: rgb(4, 15, 25);
-  transition: color 0.3s ease;
+@media (max-width: 860px) {
+  .img {
+    height: 300px;
+  }
 }
 
-.favorite {
-  color: red;
-}
-
-.icon {
-  color: rgb(15, 26, 36);
-  font-size: 1.5rem;
-  ;
-  cursor: pointer;
-  text-decoration: none;
-  transition: font-size 0.2s;
-}
-
-.icon:hover {
-  color: #ff9900;
-}
-
-.icon:active {
-  font-size: 3rem;
-  color: #2b5f57;
-}
-
-.cartIconContainer {
-  position: relative;
-}
-
-.addedMessage {
-  position: absolute;
-  top: -70px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgb(50, 103, 128);
-  color: rgb(239, 246, 241);
-  padding: 6px 10px;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  display: inline-block;
-  opacity: 1;
-  transition: opacity 0.5s;
-  width: 150px;
-}
-
-.addedMessage::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 6px;
-  border-style: solid;
-  border-color: #ff9900 transparent transparent transparent;
-}
-
-.addedMessage.hide {
-  opacity: 0;
-  pointer-events: none;
-}
-
-
-.bagDesc {
-  font-size: 1rem;
-  color: #333030;
-}
-
-.bagPlace,
-.bagDate {
-  font-size: 0.9rem;
-  color: #777;
-  margin: 4px 0;
-}
-
-.bagInfo {
-  font-size: 0.9rem;
-}
-
-.bagPrice {
-  color: rgb(29, 95, 72);
-  font-size: 18px;
-  color: rgb(17, 20, 19);
-  font-size: 22px;
-}
-
-.bagPlace {
-  display: flex;
-  justify-content: center;
-  color: #302c2c;
-}
-
-
-
-
-@media (max-width: 768px) {
-  .bagCard {
-    width: 350px;
+@media (max-width: 480px) {
+  .img {
+    height: 250px;
   }
 }

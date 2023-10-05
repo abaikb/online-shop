@@ -5,15 +5,11 @@ import styles from './Header.module.css';
 import logo from '../../assets/images/icons/logo.png';
 import { CartContext } from '../../context/CartContext';
 import { FavoriteContext } from '../../context/FavoriteContext';
-import SearchIcon from '../../assets/images/icons/svg/searchIcon';
-import ProfileIcon from '../../assets/images/icons/svg/profileIcon';
-import HeartIcon from '../../assets/images/icons/svg/heartIcon';
-import CartIcon from '../../assets/images/icons/svg/cartIcon';
-import { BurgerIcon } from '../../assets/images/icons/svg/burgerIcon';
+import { BurgerIcon, SearchIcon, CartIcon, ProfileIcon, HeartIcon } from '../../components/icons/Icons';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 748);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 760);
   const { cartItems } = useContext(CartContext);
   const { favorites } = useContext(FavoriteContext);
 
@@ -72,7 +68,7 @@ const Header = () => {
         <nav className={styles.desktop_nav}>
           <div className={styles.header_nav}>
             {isMobile && (
-              <button className={styles.burger_button} onClick={toggleMenu}>
+              <button className={styles.burger_button} onClick={toggleMenu} >
                 <BurgerIcon />
               </button>
             )}
@@ -90,23 +86,20 @@ const Header = () => {
               <Link className={styles.header_link}>lorem</Link>
             </ul>
           )}
-          <ul>
-            <Link className={styles.header_btn}>
-              {/* <SearchIcon /> */}
-              search
+          <ul className={styles.header_btn}>
+            <Link to="/">
+              <SearchIcon />
             </Link>
-            <Link className={styles.header_btn}>
-              {/* <ProfileIcon /> */}
-              profile
+            <Link to="/">
+              <ProfileIcon />
+
             </Link>
-            <Link className={styles.header_btn}>
-              {/* <HeartIcon /> */}
-              fav
+            <Link to="/">
+              <HeartIcon />
               {favorites.length > 0 && <div className={styles.indicator}>{favorites.length}</div>}
             </Link>
-            <Link className={styles.header_btn} to="/cart">
-              {/* <CartIcon /> */}
-              cart
+            <Link to="/cart">
+              <CartIcon />
               {cartItems.length > 0 && <div className={styles.indicator}>{cartItems.length}</div>}
             </Link>
           </ul>

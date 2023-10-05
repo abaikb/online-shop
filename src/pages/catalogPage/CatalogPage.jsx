@@ -55,6 +55,39 @@ function CatalogPage() {
               }
             />
           ))}
+          {/* {products.map((product) => (
+            <BagCard
+              key={product.id}
+              product={product}
+              addToCart={addToCart}
+              addToFavorites={() => addToFavorites(product)}
+              removeFromFavorites={() => removeFromFavorites(product.id)}
+              isFavorite={isItemInFavorites(product.id)
+              }
+            />
+          ))}
+          {products.map((product) => (
+            <BagCard
+              key={product.id}
+              product={product}
+              addToCart={addToCart}
+              addToFavorites={() => addToFavorites(product)}
+              removeFromFavorites={() => removeFromFavorites(product.id)}
+              isFavorite={isItemInFavorites(product.id)
+              }
+            />
+          ))}
+          {products.map((product) => (
+            <BagCard
+              key={product.id}
+              product={product}
+              addToCart={addToCart}
+              addToFavorites={() => addToFavorites(product)}
+              removeFromFavorites={() => removeFromFavorites(product.id)}
+              isFavorite={isItemInFavorites(product.id)
+              }
+            />
+          ))} */}
         </div>
       </div>
     </section>
