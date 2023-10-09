@@ -78,23 +78,23 @@ const Header = () => {
           </div>
           {isMobile === false && (
             <ul>
-              <Link className={styles.header_link}>lorem</Link>
-              <Link className={styles.header_link}>lorem</Link>
-              <Link className={styles.header_link}>lorem</Link>
-              <Link className={styles.header_link}>lorem</Link>
-              <Link className={styles.header_link}>lorem</Link>
-              <Link className={styles.header_link}>lorem</Link>
+              <Link to="/categories/clothes" className={styles.header_link}>lorem</Link>
+              <Link to="/categories/clothes" className={styles.header_link}>lorem</Link>
+              <Link to="/categories/clothes" className={styles.header_link}>lorem</Link>
+              <Link to="/categories/clothes" className={styles.header_link}>lorem</Link>
+              <Link to="/categories/clothes" className={styles.header_link}>lorem</Link>
+              <Link to="/categories/clothes" className={styles.header_link}>lorem</Link>
             </ul>
           )}
           <ul className={styles.header_btn}>
             <Link to="/">
               <SearchIcon />
             </Link>
-            <Link to="/">
+            <Link to="/profile">
               <ProfileIcon />
 
             </Link>
-            <Link to="/">
+            <Link to="/favorites">
               <HeartIcon />
               {favorites.length > 0 && <div className={styles.indicator}>{favorites.length}</div>}
             </Link>

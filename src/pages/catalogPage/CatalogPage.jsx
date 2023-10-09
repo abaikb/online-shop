@@ -18,8 +18,8 @@ function CatalogPage() {
         console.log('Товары успешно получены с сервера.');
         setProducts(response.data.results);
       }
-      catch {
-        console.error('error');
+      catch (error) {
+        console.error('Произошла ошибка:', error);
       }
     };
     getProducts();
@@ -55,39 +55,6 @@ function CatalogPage() {
               }
             />
           ))}
-          {/* {products.map((product) => (
-            <BagCard
-              key={product.id}
-              product={product}
-              addToCart={addToCart}
-              addToFavorites={() => addToFavorites(product)}
-              removeFromFavorites={() => removeFromFavorites(product.id)}
-              isFavorite={isItemInFavorites(product.id)
-              }
-            />
-          ))}
-          {products.map((product) => (
-            <BagCard
-              key={product.id}
-              product={product}
-              addToCart={addToCart}
-              addToFavorites={() => addToFavorites(product)}
-              removeFromFavorites={() => removeFromFavorites(product.id)}
-              isFavorite={isItemInFavorites(product.id)
-              }
-            />
-          ))}
-          {products.map((product) => (
-            <BagCard
-              key={product.id}
-              product={product}
-              addToCart={addToCart}
-              addToFavorites={() => addToFavorites(product)}
-              removeFromFavorites={() => removeFromFavorites(product.id)}
-              isFavorite={isItemInFavorites(product.id)
-              }
-            />
-          ))} */}
         </div>
       </div>
     </section>

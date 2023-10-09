@@ -102,12 +102,3 @@ h6 {
   height: 20px;
   width: 190px;
 }
-
-@media (max-width: 640px) {
-  .footer_wrapper {
-    height: 100vh;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-  }
-}
