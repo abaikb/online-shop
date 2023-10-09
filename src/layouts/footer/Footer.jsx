@@ -87,9 +87,9 @@ const Footer = () => {
         </AntdConfig>
       )}
       {isMobile === true && (
-        <section>
-          mobile
-        </section>
+        <div className="container">
+          new
+        </div>
       )}
     </footer>
   );

@@ -90,9 +90,8 @@ const Header = () => {
             <Link to="/">
               <SearchIcon />
             </Link>
-            <Link to="/profile">
+            <Link to="/login">
               <ProfileIcon />
-
             </Link>
             <Link to="/favorites">
               <HeartIcon />

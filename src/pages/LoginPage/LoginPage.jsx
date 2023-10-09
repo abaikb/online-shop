@@ -1,29 +1,16 @@
-import React, { useState } from 'react';
-import LoginForm from '../../components/login/LoginForm';
-import RegistrationForm from '../../components/register/RegistrationForm';
-import styles from './LoginPage.module.css'; 
+import React from "react";
+import MainInput from '../../components/ui/MainInput/MainInput';
 
 const LoginPage = () => {
-  const [isLoginFormVisible, setIsLoginFormVisible] = useState(true);
-
   return (
-    <div className={styles.loginPage}>
-      <div className={styles.formToggle}>
-        <button
-          onClick={() => setIsLoginFormVisible(true)}
-          className={isLoginFormVisible ? styles.active : ''}
-        >
-          Войти
-        </button>
-        <button
-          onClick={() => setIsLoginFormVisible(false)}
-          className={!isLoginFormVisible ? styles.active : ''}
-        >
-          Зарегаться
-        </button>
+    <section>
+      <div className="container">
+        <form>
+          <MainInput type="email" />
+          <MainInput type="password" />
+        </form>
       </div>
-      {isLoginFormVisible ? <LoginForm /> : <RegistrationForm />}
-    </div>
+    </section>
   );
 };
 

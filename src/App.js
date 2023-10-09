@@ -11,6 +11,7 @@ import CartPage from './pages/CartPage/CartPage.jsx';
 import Favorite from './pages/FavoritePage/fav.jsx';
 import LoginPage from './pages/LoginPage/LoginPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
+import RegisterPage from './pages/RegisterPage/RegisterPage';
 
 import './assets/styles/globals.css';
 
@@ -25,7 +26,9 @@ function App() {
               <Route path='/catalog' element={<CatalogPage />} />
               <Route path='/cart' element={<CartPage />} />
               <Route path='/favorites' element={<Favorite />} />
-              <Route path='/profile' element={<LoginPage />} />
+              <Route path='/login' element={<LoginPage />} />
+              <Route path='/register' element={<RegisterPage />} />
+              <Route path='/profile' element={<ProfilePage />} /> 
               <Route path='/catalog/:id' element={<DetailPage />} />
               <Route path='/client' element={<ProfilePage />} />
             </Route>
