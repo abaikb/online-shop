@@ -10,7 +10,7 @@ const AntdConfig = ({ children }) => {
           colorPrimaryHover: '#2d2d2d',
           borderRadius: 0,
           colorBgContainer: '#ffffff',
-          colorLink: '#ffffff',
+          colorLink: '#000000',
         },
       }}
     >
