@@ -88,7 +88,7 @@ const LoginPage = () => {
             onOk={handleModalOk}
             onCancel={() => setIsModalVisible(false)}
             footer={[
-              <Button key="ok" type="primary" onClick={handleModalOk}>
+              <Button key="ok" type="primary" onClick={handleModalOk} size='large'>
                 OK
               </Button>,
             ]}

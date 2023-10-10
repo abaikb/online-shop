@@ -31,6 +31,8 @@ const Header = () => {
     };
   }, []);
 
+  const accessToken = localStorage.getItem('accessToken');
+
   return (
     <header className={styles.header}>
       {isMobile && isMenuOpen && (
@@ -90,9 +92,15 @@ const Header = () => {
             <Link to="/">
               <SearchIcon />
             </Link>
-            <Link to="/login">
-              <ProfileIcon />
-            </Link>
+            {accessToken ? (
+              <Link to="/profile">
+                <ProfileIcon />
+              </Link>
+            ) : (
+              <Link to="/login">
+                <ProfileIcon />
+              </Link>
+            )}
             <Link to="/favorites">
               <HeartIcon />
               {favorites.length > 0 && <div className={styles.indicator}>{favorites.length}</div>}
