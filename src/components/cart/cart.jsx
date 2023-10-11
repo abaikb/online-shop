@@ -15,19 +15,19 @@ const Cart = ({ cartItems, removeFromCart, incrementItem, decrementItem }) => {
         <div className="container">
           {cartItems.length === 0 ? (
             <div className={styles.empty}>
-              <h2 className="page_title">Корзина пуста</h2>
+              <h1 className="page_title">Корзина пуста</h1>
               <Link to="/catalog">
                 <Button type="primary" size='large'>Каталог</Button>
               </Link>
             </div>
           ) : (
             <div>
-              <h2 className="page_title">корзина</h2>
+              <h1 className="page_title">корзина</h1>
               <div className={styles.cart_items}>
                 {cartItems.map((cartItem) => (
                   <Card
                     key={cartItem.id}
-                    cover={<div className={styles.cart_item_cover}><img src={cartItem.image} /></div>}
+                    cover={<figure className={styles.cart_item_cover}><img src={cartItem.images} alt='Фото товара'/></figure>}
                     className={styles.cart_item}
                   >
                     <div className={styles.cart_item_content}>

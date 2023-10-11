@@ -29,7 +29,7 @@ const BagCard = ({ product, addToCart, addToFavorites, removeFromFavorites, isFa
         </div>
         <div className={styles.btn}>
           <HeartIcon />
-          <CartIcon />
+          <CartIcon onClick={handleAddToCart} />
         </div>
       </div>
     </article>

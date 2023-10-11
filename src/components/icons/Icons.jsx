@@ -3,32 +3,32 @@ import { HiOutlineShoppingBag, HiOutlineHeart, HiOutlineSearch, HiOutlineUser } 
 import { HiBars3 } from 'react-icons/hi2';
 import styles from './Icons.module.css';
 
-export function SearchIcon() {
+export function SearchIcon({ onClick }) {
   return (
-    <HiOutlineSearch className={styles.icon} />
+    <HiOutlineSearch className={styles.icon} onClick={onClick} />
   );
 }
 
-export function ProfileIcon() {
+export function ProfileIcon({ onClick }) {
   return (
-    <HiOutlineUser className={styles.icon} />
+    <HiOutlineUser className={styles.icon} onClick={onClick} />
   );
 }
 
-export function HeartIcon() {
+export function HeartIcon({ onClick }) {
   return (
-    <HiOutlineHeart className={styles.icon} />
+    <HiOutlineHeart className={styles.icon} onClick={onClick} />
   );
 }
 
-export function CartIcon() {
+export function CartIcon({ onClick }) {
   return (
-    <HiOutlineShoppingBag className={styles.icon} />
+    <HiOutlineShoppingBag className={styles.icon} onClick={onClick} />
   );
 }
 
-export function BurgerIcon() {
+export function BurgerIcon({ onClick }) {
   return (
-    <HiBars3 className={styles.icon} />
+    <HiBars3 className={styles.icon} onClick={onClick} />
   );
 }
