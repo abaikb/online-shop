@@ -1,10 +1,10 @@
 import React, { useEffect, useContext, useState } from 'react';
-import BagCard from '../../components/BagCard/BagCard';
 import styles from './CatalogPage.module.css';
 import { CartContext } from '../../context/CartContext';
 import { useFavorite } from "../../context/FavoriteContext";
 import API_BASE_URL from '../../api/BASE_URL';
 import axios from 'axios';
+import ProductCard from '../../components/ProductCard/ProductCard';
 
 function CatalogPage() {
   const [products, setProducts] = useState([]);
@@ -45,7 +45,7 @@ function CatalogPage() {
         <h2 className="page_title">каталог</h2>
         <div className={styles.product_grid}>
           {products.map((product) => (
-            <BagCard
+            <ProductCard
               key={product.id}
               product={product}
               addToCart={addToCart}

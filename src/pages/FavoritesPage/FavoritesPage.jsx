@@ -1,16 +1,18 @@
 import React from "react";
 import { useFavorite } from "../../context/FavoriteContext";
 import { Button, Input, Card } from 'antd';
-import styles from "./fav.module.css";
+import styles from './FavoritesPage.module.css';
 import AntdConfig from '../../config/AntdConfig';
 
-const Favorite = () => {
+const FavoritesPage = () => {
   const { favorites } = useFavorite();
 
   return (
     <section className={styles.favorites}>
       <AntdConfig>
         <div className="container">
+          <h1 className="page_title">избранные товары</h1>
+          
           {favorites.map((favorites) => (
             <Card
               key={favorites.id}
@@ -28,4 +30,4 @@ const Favorite = () => {
   );
 };
 
-export default Favorite;
+export default FavoritesPage;

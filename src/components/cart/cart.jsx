@@ -27,7 +27,7 @@ const Cart = ({ cartItems, removeFromCart, incrementItem, decrementItem }) => {
                 {cartItems.map((cartItem) => (
                   <Card
                     key={cartItem.id}
-                    cover={<figure className={styles.cart_item_cover}><img src={cartItem.images} alt='Фото товара'/></figure>}
+                    cover={<figure className={styles.cart_item_cover}><img src={cartItem.images} alt='Фото товара' /></figure>}
                     className={styles.cart_item}
                   >
                     <div className={styles.cart_item_content}>
