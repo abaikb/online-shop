@@ -1,104 +1,14 @@
 .footer {
-  background-color: #0f0f0f;
+  background-color: var(--dark-color);
+  color: var(--white-color);
 }
 
-.footer_logo img {
-  width: 190px;
-  margin-bottom: 30px;
-}
-
-.footer_faq,
-.footer_categories,
-.footer_contacts {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  color: white;
-}
-
-.footer_faq,
-.footer_categories,
-.footer_contacts img {
-  width: 27px;
-  height: 27px;
-}
-
-.footer_faq a,
-.footer_categories a {
+.copyright {
+  color: rgba(255, 255, 255, 0.80);
   font-size: 18px;
-  font-style: normal;
-  font-weight: 100;
-  line-height: 25.2px;
-  text-transform: uppercase;
-}
-
-h6 {
-  font-size: 25px;
-  font-style: normal;
   font-weight: 400;
-  line-height: 35px;
-  text-transform: uppercase;
-  padding-bottom: 5px;
-}
-
-.footer_wrapper {
-  display: flex;
-  justify-content: space-between;
-  padding: 40px 0 100px;
-}
-
-.footer_legal {
-  padding: 20px 0;
+  line-height: 22px;
   text-align: center;
+  padding: 20px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 21.6px;
-}
-
-.footer_contacts h6 {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 22.4px;
-  text-transform: uppercase;
-}
-
-.footer_contacts a {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-
-.footer_socials {
-  display: flex;
-  gap: 14px;
-}
-
-.footer_input {
-  border: 2px solid white;
-  background-color: white;
-}
-
-.footer a {
-  transition: 0.3s;
-}
-
-.footer a:hover {
-  color: var(--orange-hover);
-  transition: 0.3s;
-}
-
-.footer_payments {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  height: 20px;
-  color: white;
-  font-size: 30px;
-}
-
-.footer_payments img:last-child {
-  height: 20px;
-  width: 190px;
 }

@@ -1,0 +1,10 @@
+@media (max-width: 480px) {
+  section {
+    min-height: 100vh;
+    padding: 75px 0 15px;
+  }
+
+  .container {
+    padding: 0 5px;
+  }
+}

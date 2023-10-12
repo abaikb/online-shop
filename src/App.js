@@ -1,19 +1,19 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-import { CartProvider } from './context/CartContext';
-import { FavoriteProvider } from './context/FavoriteContext';
-import Layout from './layouts/Layout';
-import HomePage from './pages/HomePage/HomePage';
-import CatalogPage from './pages/catalogPage/CatalogPage';
-import DetailPage from './pages/DetailPage/DetailPage';
-import CartPage from './pages/CartPage/CartPage.jsx';
-import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
-import LoginPage from './pages/LoginPage/LoginPage';
-import ProfilePage from './pages/ProfilePage/ProfilePage';
-import RegisterPage from './pages/RegisterPage/RegisterPage';
+import { CartProvider } from './context/CartContext'
+import { FavoriteProvider } from './context/FavoriteContext'
+import Layout from './layouts/Layout'
+import HomePage from './pages/HomePage/HomePage'
+import CatalogPage from './pages/catalogPage/CatalogPage'
+import DetailPage from './pages/DetailPage/DetailPage'
+import CartPage from './pages/CartPage/CartPage.jsx'
+import FavoritesPage from './pages/FavoritesPage/FavoritesPage'
+import LoginPage from './pages/LoginPage/LoginPage'
+import ProfilePage from './pages/ProfilePage/ProfilePage'
+import RegisterPage from './pages/RegisterPage/RegisterPage'
 
-import './assets/styles/globals.css';
+import './assets/styles/globals.css'
 
 function App() {
   return (
@@ -36,7 +36,7 @@ function App() {
         </FavoriteProvider>
       </CartProvider>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App

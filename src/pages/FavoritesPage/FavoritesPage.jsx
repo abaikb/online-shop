@@ -1,14 +1,14 @@
-import React from "react";
-import { useFavorite } from "../../context/FavoriteContext";
-import { Card } from "antd";
-import styles from "./FavoritesPage.module.css";
-import AntdConfig from "../../config/AntdConfig";
-import { Link } from "react-router-dom";
-import { HeartIcon } from "../../components/icons/Icons";
+import React from "react"
+import { useFavorite } from "../../context/FavoriteContext"
+import { Card } from "antd"
+import styles from "./FavoritesPage.module.css"
+import AntdConfig from "../../config/AntdConfig"
+import { Link } from "react-router-dom"
+import { HeartIcon } from "../../components/icons/Icons"
 import MainButton from '../../components/ui/MainButton/MainButton'
 
 const FavoritesPage = () => {
-  const { favorites, removeFromFavorites } = useFavorite();
+  const { favorites, removeFromFavorites } = useFavorite()
 
   return (
     <section className={styles.favorites}>
@@ -52,7 +52,7 @@ const FavoritesPage = () => {
         </div>
       </AntdConfig>
     </section>
-  );
-};
+  )
+}
 
-export default FavoritesPage;
+export default FavoritesPage

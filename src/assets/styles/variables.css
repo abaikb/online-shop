@@ -1,9 +1,9 @@
 :root {
   --orange-hover: rgb(255, 87, 51);
-  --text-color: rgb(45, 45, 45);
   --black-color: rgb(0, 0, 0);
   --white-color: rgb(255, 255, 255);
-  --light-grey: rgb(51, 51, 51);
-  --dark-grey: rgb(36, 36, 36);
+  --light-color: rgb(51, 51, 51);
+  --medium-color: rgb(36, 36, 36);
+  --dark-color: rgb(15, 15, 15);
   --hover-transition: 0.3s;
 }
