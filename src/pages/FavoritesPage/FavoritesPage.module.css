@@ -31,6 +31,28 @@
 
 .content {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item_category {
+  color: var(--black-color);
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 26px;
+  text-transform: none;
+}
+
+.empty {
+  text-align: center;
+}
+
+.empty button {
+  margin-top: 15px;
+}
+
+.content svg {
+  font-size: 30px;
 }
 
 @media (max-width: 1100px) {

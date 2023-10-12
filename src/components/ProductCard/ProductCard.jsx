@@ -10,7 +10,21 @@ const ProductCard = ({ product, addToCart, addToFavorites, removeFromFavorites, 
 
   const addSuccess = () => {
     api.open({
-      message: 'Товар успешно добавлен в корзину!',
+      message: 'Товар добавлен в корзину!',
+      duration: 1,
+    });
+  };
+
+  const favSuccessAdd = () => {
+    api.open({
+      message: 'Товар добавлен в избранное!',
+      duration: 1,
+    });
+  };
+
+  const favSuccessRemove = () => {
+    api.open({
+      message: 'Товар удалён из избранных!',
       duration: 1,
     });
   };
@@ -18,6 +32,16 @@ const ProductCard = ({ product, addToCart, addToFavorites, removeFromFavorites, 
   const handleAddToCart = () => {
     addToCart(product);
     addSuccess();
+  };
+
+  const handleAddToFavorites = () => {
+    if (isFavorite) {
+      removeFromFavorites(product.id);
+      favSuccessRemove();
+    } else {
+      addToFavorites(product);
+      favSuccessAdd();
+    }
   };
 
   return (
@@ -35,7 +59,7 @@ const ProductCard = ({ product, addToCart, addToFavorites, removeFromFavorites, 
             <p>{product.price} сом</p>
           </div>
           <div className={styles.btn}>
-            <HeartIcon onClick={() => isFavorite ? removeFromFavorites(product.id) : addToFavorites(product)} />
+            <HeartIcon onClick={handleAddToFavorites} />
             <CartIcon onClick={handleAddToCart} />
           </div>
         </div>
@@ -45,5 +69,3 @@ const ProductCard = ({ product, addToCart, addToFavorites, removeFromFavorites, 
 };
 
 export default ProductCard;
-
-
