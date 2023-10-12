@@ -1,88 +1,129 @@
-import React from 'react';
-import AntdConfig from '../../config/AntdConfig';
-import { Button, Form, Input } from 'antd';
-import axios from 'axios';
-import API_BASE_URL from '../../api/BASE_URL';
+import React, { useState, useEffect } from 'react'
+import { Form, Input, DatePicker, Upload, Button } from 'antd'
+import moment from 'moment'
+import API_BASE_URL from '../../api/BASE_URL'
+import axios from 'axios'
+import styles from './ProfilePage.module.css'
+import AntdConfig from '../../config/AntdConfig'
 
 export default function ProfilePage() {
+  const [form] = Form.useForm()
+  const [isLoading, setIsLoading] = useState(false)
+  const [userData, setUserData] = useState({
+    date_birth: '',
+    city: '',
+    first_name: '',
+    last_name: '',
+  })
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const token = JSON.parse(localStorage.getItem('token')).access
+
+        const response = await axios.get(`${API_BASE_URL}/account/get_profile/`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+
+        const { date_birth, city, first_name, last_name } = response.data
+        setUserData({
+          date_birth: moment(date_birth),
+          city,
+          first_name,
+          last_name,
+        })
+
+        form.setFieldsValue({
+          date_birth: moment(date_birth),
+          city,
+          first_name,
+          last_name,
+        })
+      } catch (error) {
+        console.error('Error fetching user profile:', error)
+      }
+    }
+
+    fetchData()
+  }, [])
+
+  const handleSubmit = async (values) => {
+    setIsLoading(true)
+
+    values.date_birth = moment(values.date_birth).format('YYYY-MM-DD')
+
+    try {
+      const token = localStorage.getItem('accessToken')
+
+      const response = await axios.patch(
+        `${API_BASE_URL}/account/edit_profile/`,
+        values,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+        }
+      )
+      console.log('Updated user profile:', values, response)
+    } catch (error) {
+      console.error('Error updating user profile:', error)
+    } finally {
+      setIsLoading(false)
+    }
+  }
 
   const signOut = () => {
-    localStorage.clear();
-    window.location.href = '/';
+    localStorage.clear()
+    // window.location.href = '/'
   };
 
-  const token = localStorage.getItem('accessToken');
-
-  const requestHeaders = {
-    Authorization: `Bearer ${token}`,
-    'Content-Type': 'application/json',
-  };
-
-  const getProfile = async () => {
-    try {
-      const response = await axios.get(`${API_BASE_URL}/account/profile/`, requestHeaders);
-      console.log('Success:', response.data);
-    }
-    catch (error) {
-      console.error("Error:", error);
-    }
-  };
-
-  getProfile();
-
-  const patchProfile = async (values) => {
-    try {
-      const response = await axios.patch(`${API_BASE_URL}/account/profile/`, values, requestHeaders);
-      console.log('Success:', response.data);
-    }
-    catch (error) {
-      console.error("Произошла ошибка:", error);
-    }
-  };
 
   return (
     <section>
       <div className="container">
         <AntdConfig>
           <Form
-            name="patch_profile"
-            onFinish={patchProfile}
+            form={form}
+            onFinish={handleSubmit}
             initialValues={{
-              last_login: "",
-              is_superuser: false,
-              first_name: "",
-              is_staff: false,
-              date_joined: "",
-              email: "",
-              password: "",
-              name: "",
-              last_name: "",
-              date_birth: "",
-              city: "",
-              is_active: true,
-              is_company: false,
-              is_user: true,
-              activation_code: "",
-              groups: [0],
-              user_permissions: [0]
+              date_birth: userData.date_birth,
+              city: userData.city,
+              password: '',
+              first_name: userData.first_name,
+              last_name: userData.last_name,
             }}
           >
-            <Form.Item name="first_name">
-              <Input placeholder='name' />
+            <Form.Item label="Date of Birth" name="date_birth">
+              <DatePicker format="YYYY-MM-DD" />
             </Form.Item>
-            <Form.Item name="last_name">
-              <Input placeholder='last name' />
+            <Form.Item label="City" name="city">
+              <Input />
             </Form.Item>
-            <Form.Item name="city">
-              <Input placeholder='city' />
+            <Form.Item label="Password" name="password">
+              <Input.Password />
+            </Form.Item>
+            <Form.Item label="First Name" name="first_name">
+              <Input />
+            </Form.Item>
+            <Form.Item label="Last Name" name="last_name">
+              <Input />
             </Form.Item>
             <Form.Item>
-              <Button type='primary' htmlType='submit'>изменить</Button>
-              <Button type='primary' danger onClick={signOut}>выйти</Button>
+              <Button type="primary" htmlType="submit" loading={isLoading}>
+                Save
+              </Button>
+            </Form.Item>
+            <Form.Item>
+              <Button type="primary"  onClick={signOut}>
+                quit
+              </Button>
             </Form.Item>
           </Form>
         </AntdConfig>
       </div>
     </section>
-  );
+  )
 }
