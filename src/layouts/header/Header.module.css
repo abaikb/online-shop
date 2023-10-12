@@ -1,7 +1,26 @@
 .header {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  background: var(--white-color);
+  transition: var(--hover-transition);
+}
+
+.header-scroll {
   -webkit-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.15);
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  background: var(--white-color);
+  transition: var(--hover-transition);
 }
 
 .desktop_nav {
@@ -77,7 +96,6 @@
 
 .header_link {
   transition: var(--hover-transition);
-  position: relative;
   color: var(--light-grey);
   font-size: 20px;
   font-weight: 200;
@@ -90,6 +108,10 @@
   transition: var(--hover-transition);
 }
 
+.header_icon {
+  position: relative;
+}
+
 .indicator {
   position: absolute;
   background-color: var(--black-color);
@@ -100,6 +122,13 @@
   border-radius: 50%;
   display: flex;
   align-items: center;
+  justify-content: center;
+  top: -2px;
+  right: -4px;
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 15px;
+  z-index: 150;
 }
 
 .header_btn a {

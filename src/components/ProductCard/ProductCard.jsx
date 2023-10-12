@@ -35,7 +35,7 @@ const ProductCard = ({ product, addToCart, addToFavorites, removeFromFavorites, 
             <p>{product.price} сом</p>
           </div>
           <div className={styles.btn}>
-            <HeartIcon />
+            <HeartIcon onClick={() => isFavorite ? removeFromFavorites(product.id) : addToFavorites(product)} />
             <CartIcon onClick={handleAddToCart} />
           </div>
         </div>

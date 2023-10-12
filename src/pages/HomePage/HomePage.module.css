@@ -1,6 +1,5 @@
 .home {
   height: 100vh;
-  text-align: right;
 }
 
 .home_wrapper {
@@ -26,4 +25,12 @@ align-items: center;
 .home p {
   font-size: 30px;
   font-weight: 200;
+}
+
+.desc {
+  text-align: center;
+}
+
+.desc h1 {
+  text-align: right;
 }

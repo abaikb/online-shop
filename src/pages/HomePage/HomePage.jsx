@@ -4,6 +4,7 @@ import AntdConfig from '../../config/AntdConfig';
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
 import bg from '../../assets/images/hero-bg.png';
+import MainButton from '../../components/ui/MainButton/MainButton';
 
 const HomePage = () => {
 
@@ -15,9 +16,11 @@ const HomePage = () => {
             <div className={styles.home_bg}>
               <img src={bg} alt="Фон" />
             </div>
-            <div>
-              <h2>Добро пожаловать на главную страницу!</h2>
-              <p>Здесь вы можете найти широкий выбор женских сумок. Просто перейдите в <Link to="/catalog"><Button>каталог</Button></Link>, чтобы начать покупки.</p>
+            <div className={styles.desc}>
+              <h1 className='page_title'>Добро пожаловать на главную страницу!</h1>
+              <Link to="/catalog">
+                <MainButton size="large" type="primary">каталог</MainButton>
+              </Link>
             </div>
           </div>
         </div>

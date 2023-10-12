@@ -1,5 +1,4 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { FaHeart, FaShoppingCart, FaUser, FaBars, FaTimes, FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 import logo from '../../assets/images/icons/logo.png';
@@ -12,6 +11,17 @@ const Header = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 760);
   const { cartItems } = useContext(CartContext);
   const { favorites } = useContext(FavoriteContext);
+  const [scroll, setScroll] = useState(false);
+
+  const toggleScroll = () => {
+    if (window.scrollY > 0) {
+      setScroll(true);
+    } else {
+      setScroll(false);
+    }
+  };
+
+  window.addEventListener('scroll', toggleScroll);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -33,8 +43,10 @@ const Header = () => {
 
   const accessToken = localStorage.getItem('accessToken');
 
+  const color = scroll ? styles['header-scroll'] : styles.header;
+
   return (
-    <header className={styles.header}>
+    <header className={color}>
       {isMobile && isMenuOpen && (
         <nav className={styles.burger_nav}>
           <div className="container">
@@ -101,11 +113,11 @@ const Header = () => {
                 <ProfileIcon />
               </Link>
             )}
-            <Link to="/favorites">
+            <Link className={styles.header_icon} to="/favorites">
               <HeartIcon />
               {favorites.length > 0 && <div className={styles.indicator}>{favorites.length}</div>}
             </Link>
-            <Link to="/cart">
+            <Link className={styles.header_icon} to="/cart">
               <CartIcon />
               {cartItems.length > 0 && <div className={styles.indicator}>{cartItems.length}</div>}
             </Link>

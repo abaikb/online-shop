@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './cart.module.css';
-import { Button, Input, Card } from 'antd';
+import { Button, Card } from 'antd';
 import AntdConfig from '../../config/AntdConfig';
 
 const Cart = ({ cartItems, removeFromCart, incrementItem, decrementItem }) => {
@@ -10,7 +10,7 @@ const Cart = ({ cartItems, removeFromCart, incrementItem, decrementItem }) => {
   };
 
   return (
-    <section className={styles.cart}>
+    <div className={styles.cart}>
       <AntdConfig>
         <div className="container">
           {cartItems.length === 0 ? (
@@ -23,11 +23,11 @@ const Cart = ({ cartItems, removeFromCart, incrementItem, decrementItem }) => {
           ) : (
             <div>
               <h1 className="page_title">корзина</h1>
-              <div className={styles.cart_items}>
+              <div className={styles.grid}>
                 {cartItems.map((cartItem) => (
                   <Card
                     key={cartItem.id}
-                    cover={<figure className={styles.cart_item_cover}><img src={cartItem.images} alt='Фото товара' /></figure>}
+                    cover={<Link to={`/catalog/${cartItem.category}/${cartItem.id}`}><figure className={styles.cart_item_cover}><img src={cartItem.images} alt='Фото товара' /></figure></Link>}
                     className={styles.cart_item}
                   >
                     <div className={styles.cart_item_content}>
@@ -62,7 +62,7 @@ const Cart = ({ cartItems, removeFromCart, incrementItem, decrementItem }) => {
           )}
         </div>
       </AntdConfig>
-    </section >
+    </div >
   );
 };
 

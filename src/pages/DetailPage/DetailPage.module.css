@@ -45,12 +45,60 @@
 
 .btn {
   padding-bottom: 30px;
+  display: flex;
+  gap: 10px;
+}
+
+.add {
+  height: 54px !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  line-height: 18px !important;
+  letter-spacing: 1px !important;
+}
+
+.add_to_cart {
+  height: 54px;
 }
 
 .info p {
   font-size: 18px;
   font-weight: 400;
   line-height: 28.8px;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+  border: 2px solid var(--black-color);
+  width: min-content;
+}
+
+.quantity button {
+  color: #0F0F0F;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  width: 40px;
+  transition: var(--hover-transition);
+}
+
+.quantity button:hover {
+  color: var(--orange-hover);
+  transition: var(--hover-transition);
+}
+
+.quantity span {
+  color: #0F0F0F;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+  width: 40px;
 }
 
 @media (max-width: 748px) {
