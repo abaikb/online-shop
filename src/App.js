@@ -10,10 +10,11 @@ import DetailPage from './pages/DetailPage/DetailPage'
 import CartPage from './pages/CartPage/CartPage.jsx'
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage'
 import LoginPage from './pages/LoginPage/LoginPage'
-import ProfilePage from './pages/ProfilePage/ProfilePage'
+import Profile from './pages/Profile/Profile'
 import RegisterPage from './pages/RegisterPage/RegisterPage'
 
-import './assets/styles/globals.css'
+import './assets/styles/globals.scss'
+import EditProfile from './pages/EditProfile/EditProfile'
 
 function App() {
   return (
@@ -28,9 +29,9 @@ function App() {
               <Route path='/favorites' element={<FavoritesPage />} />
               <Route path='/login' element={<LoginPage />} />
               <Route path='/register' element={<RegisterPage />} />
-              <Route path='/profile' element={<ProfilePage />} />
+              <Route path='/profile' element={<Profile />} />
+              <Route path='/profile/edit' element={<EditProfile />} />
               <Route path='/catalog/:category/:id' element={<DetailPage />} />
-              <Route path='/client' element={<ProfilePage />} />
             </Route>
           </Routes>
         </FavoriteProvider>

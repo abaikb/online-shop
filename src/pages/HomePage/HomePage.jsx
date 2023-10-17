@@ -1,10 +1,9 @@
-import React from 'react';
-import styles from './HomePage.module.css';
-import AntdConfig from '../../config/AntdConfig';
-import { Button } from 'antd';
-import { Link } from 'react-router-dom';
-import bg from '../../assets/images/hero-bg.png';
-import MainButton from '../../components/ui/MainButton/MainButton';
+import React from 'react'
+import styles from './HomePage.module.scss'
+import AntdConfig from '../../config/AntdConfig'
+import { Link } from 'react-router-dom'
+import bg from '../../assets/images/hero-bg.png'
+import MainButton from '../../components/ui/MainButton/MainButton'
 
 const HomePage = () => {
 
@@ -12,12 +11,13 @@ const HomePage = () => {
     <main className={styles.home}>
       <AntdConfig>
         <div className="container">
-          <div className={styles.home_wrapper}>
-            <div className={styles.home_bg}>
+          <div className={styles.wrapper}>
+            <div className={styles.bg}>
               <img src={bg} alt="Фон" />
             </div>
             <div className={styles.desc}>
-              <h1 className='page_title'>Добро пожаловать на главную страницу!</h1>
+              <h1 className='page_title'>главная страница</h1>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa tenetur aut assumenda debitis voluptate? Laborum at ipsum numquam rem! Temporibus ipsa fuga cumque ut at! Nemo harum deleniti amet iste.</p>
               <Link to="/catalog">
                 <MainButton size="large" type="primary">каталог</MainButton>
               </Link>
@@ -26,7 +26,7 @@ const HomePage = () => {
         </div>
       </AntdConfig>
     </main>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage
