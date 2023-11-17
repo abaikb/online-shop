@@ -22,16 +22,16 @@ function App() {
       <CartProvider>
         <FavoriteProvider>
           <Routes>
-            <Route path='/' element={<Layout />}>
+            <Route path="/" element={<Layout />}>
               <Route index element={<HomePage />} />
-              <Route path='/catalog' element={<CatalogPage />} />
-              <Route path='/cart' element={<CartPage />} />
-              <Route path='/favorites' element={<FavoritesPage />} />
-              <Route path='/login' element={<LoginPage />} />
-              <Route path='/register' element={<RegisterPage />} />
-              <Route path='/profile' element={<Profile />} />
-              <Route path='/profile/edit' element={<EditProfile />} />
-              <Route path='/catalog/:category/:id' element={<DetailPage />} />
+              <Route path="/catalog" element={<CatalogPage />} />
+              <Route path="/cart" element={<CartPage />} />
+              <Route path="/favorites" element={<FavoritesPage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/register" element={<RegisterPage />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/profile/edit" element={<EditProfile />} />
+              <Route path="/catalog/:category/:id" element={<DetailPage />} />
             </Route>
           </Routes>
         </FavoriteProvider>

@@ -1,0 +1,70 @@
+.logo {
+  width: 215px;
+}
+
+.payments {
+  padding-top: 30px;
+}
+
+.menu {
+  .dropdown {
+    color: var(--white-color);
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 35px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--hover-transition);
+    cursor: pointer;
+
+    span {
+      svg {
+        path {
+          fill: var(--white-color);
+          transition: var(--hover-transition);
+        }
+      }
+    }
+
+    &:hover {
+      color: var(--orange-hover);
+      transition: var(--hover-transition);
+      span {
+        svg {
+          path {
+            fill: var(--orange-hover);
+            transition: var(--hover-transition);
+          }
+        }
+      }
+    }
+  }
+
+  h4 {
+    color: var(--white-color);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22.4px;
+    text-transform: uppercase;
+  }
+
+  // input {
+  //   height: 50px !important;
+  //   margin-bottom: 10px;
+  //   font-size: 14px !important;
+  //   font-weight: 400 !important;
+  //   letter-spacing: 1px !important;
+  // }
+
+  // button {
+  //   height: 50px !important;
+  //   width: 100% !important;
+  //   border: 2px solid #fff;
+  //   font-size: 14px !important;
+  //   font-weight: 500 !important;
+  //   line-height: 14px !important;
+  //   letter-spacing: 1px !important;
+  // }
+}
